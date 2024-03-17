@@ -1,7 +1,8 @@
 #!/bin/python
-
 import evdev
-from evdev import categorize, ecodes
+from uuid import uuid4
+from evdev import ecodes
+
 devices = [evdev.InputDevice(path) for path in evdev.list_devices()]
 keyboard = None
 for device in devices:
@@ -12,7 +13,12 @@ for device in devices:
 polluted = False
 super_held = False
 
-for event in device.read_loop():
+file = '/home/n3rdium/.config/ags/super_key'
+def touch_file():
+    with open(file, 'w') as f:
+        f.write(str(uuid4()))
+
+for event in keyboard.read_loop():
     if event.type == ecodes.EV_KEY:
         if event.code == 125:
             if event.value == 1:
@@ -21,8 +27,7 @@ for event in device.read_loop():
             elif not event.value == 2:
                 super_held = False
                 if polluted == False:
-                    print('only super pressed')
-                    break
+                    touch_file()
                 polluted = False
 
         if not event.code == 125 and event.value == 1:
