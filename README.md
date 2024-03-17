@@ -8,5 +8,5 @@
 ░▒▓███████▓▒░ ░▒▓██████▓▒░  ░▒▓█▓▒░  ░▒▓███████▓▒░  
 ```
 
-These are my legendary WIP dotfiles (they will prlly be maintained forever!)
+These are my legendary WIP dotfiles (they will prlly be maintained forever!).
 They're managed with GNU's `stow` utility.
