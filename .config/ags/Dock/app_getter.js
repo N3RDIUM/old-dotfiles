@@ -74,16 +74,20 @@ class WindowDiffService extends Service {
 
     class2Icon(pid, window_class) {
         rebuildIcons();
+        console.log(execIcons);
         let executable = Utils.exec('readlink -f /proc/' + pid.toString() + '/exe')
         let basename = Utils.exec('basename '+ executable);
         let icon = execIcons[basename]
+        console.log(basename)
         if (icon) {
-            return this.iconAlias(window_class, icon)
+            return this.iconAlias(window_class, basename, icon)
         }
     }
     
-    iconAlias(window_class, icon) {
+    iconAlias(window_class, basename, icon) {
         if (window_class in iconAliases) {
+            return iconAliases[icon]
+        } if (basename.lower in iconAliases) {
             return iconAliases[icon]
         }
         return icon
