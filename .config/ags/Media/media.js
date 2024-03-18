@@ -16,7 +16,7 @@ const Revealer = () => Widget.Revealer({
         playlist: 'Playlist',
         artist: 'Artist',
     }),
-    setup: self => {
+    setup: () => {
         audio.connect('changed', async () => {
             revealMedia.setValue(true);
             lastInteraction.setValue(Date.now());

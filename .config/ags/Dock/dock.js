@@ -5,6 +5,7 @@ import windiff from './app_getter.js'
 import delay from '../delay.js'
 
 const taskbarIcons = Variable({})
+const iconsDeleteLock = Variable(false)
 
 windiff.connect('opened', (service, ...args) => {
     if(args[0].pid == -1) { return }
@@ -23,10 +24,13 @@ windiff.connect('closed', async (service, ...args) => {
     let icons = taskbarIcons.getValue()
     icons[args[0].pid].get_children()[0].revealChild = false
     await delay(1024)
+    while(iconsDeleteLock) {await delay(128)}
+    iconsDeleteLock.setValue(true)
     delete icons[args[0].pid]
     taskbarIcons.setValue(icons)
     lastInteraction.setValue(Date.now());
     revealDock.setValue(true);
+    iconsDeleteLock.setValue(false)
 })
 
 const Taskbar = () => Widget.Box({
