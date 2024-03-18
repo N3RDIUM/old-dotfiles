@@ -1,5 +1,7 @@
 const hyprland = await Service.import('hyprland');
+
 import { changeWallpaper } from "./Wallpaper/wallpaper_changer.js";
+import Dock from "./Dock/dock.js";
 
 hyprland.active.connect('changed', () => {
     changeWallpaper(hyprland.active.workspace.id)
@@ -8,5 +10,7 @@ hyprland.active.connect('changed', () => {
 Utils.execAsync('/bin/python /home/n3rdium/.config/ags/superkey.py')
 
 export default {
-    windows: [],
+    windows: [
+        Dock()
+    ],
 }

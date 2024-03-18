@@ -14,5 +14,10 @@
         ],
         "transition-type": "any",
         "transition-duration": 4
+    },
+    "dock": {
+        "icon-aliases": {
+            "kitty": "kitty"
+        }
     }
 }
