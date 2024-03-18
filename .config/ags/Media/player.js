@@ -7,8 +7,7 @@ class Player extends Gtk.Box {
             properties: {
                 'coverart': ['string', 'rw'],
                 'title': ['string', 'rw'],
-                'playlist': ['string', 'rw'],
-                'artist': ['string', 'rw'],
+                'progress': ['float', 'rw'],
             }
         })
     }
@@ -18,15 +17,18 @@ class Player extends Gtk.Box {
 
         this.iconWidget = Widget.Icon({
             icon: this.coverart,
-            css: 'font-size: 64px; padding: 8px; border-radius: 10px;'
+            css: 'font-size: 88px; margin: 8px; border-radius: 10px;'
         }),
         this.add(this.iconWidget)
 
         this.titleLabel = Widget.Label({
             label: this.title,
-            css: 'font-size: 16px; padding: 4px; color: #ffffff; font-weight: bold;'
+            css: 'font-size: 16px; padding: 4px; color: #ffffff;'
         })
-        this.musicProgress = Widget.ProgressBar({ value: 0.4 })
+        this.musicProgress = Widget.ProgressBar({ 
+            value: 0,
+            css: 'margin-top: 4px; margin-bottom: 4px;'
+        })
         this.volumeWidget = Widget.CircularProgress({
             css: 'font-size: 2px;'
                 + 'background-color: transparent;'
@@ -66,7 +68,7 @@ class Player extends Gtk.Box {
         this.rightPaneWrapper = Widget.Box({
             vertical: true,
             homogeneous: false,
-            css: 'padding: 8px; min-width: 180px;',
+            css: 'padding: 8px; min-width: 256px;',
             children: [
                 this.titleLabel,
                 this.musicProgress,
@@ -80,6 +82,7 @@ class Player extends Gtk.Box {
         return this._coverart;
     }
     set coverart(coverart) {
+        this.iconWidget.icon = coverart;
         this._coverart = coverart;
     }
 
@@ -88,27 +91,15 @@ class Player extends Gtk.Box {
     }
     set title(title) {
         this._title = title;
+        this.titleLabel.label = title;
     }
 
-    get playlist() {
-        return this._playlist;
+    get progress() {
+        return this._progress;
     }
-    set playlist(playlist) {
-        this._playlist = playlist;
-    }
-
-    get artist() {
-        return this._artist;
-    }
-    set artist(artist) {
-        this._artist = artist;
-    }
-
-    get playerid() {
-        return this._playerid;
-    }
-    set playerid(playerid) {
-        this._playerid = playerid;
+    set progress(progress) {
+        this._progress = progress;
+        this.musicProgress.value = progress;
     }
 }
 
