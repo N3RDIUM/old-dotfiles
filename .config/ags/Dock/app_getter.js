@@ -49,7 +49,7 @@ class WindowDiffService extends Service {
             if(!(client.pid in this.window_details)) {
                 this.window_details[client.pid] = {
                     'class': client.initialClass,
-                    'icon': this.class2Icon(client.pid, client.class)
+                    'icon': this.class2Icon(client.pid, client.initialClass)
                 }
             }
         }
