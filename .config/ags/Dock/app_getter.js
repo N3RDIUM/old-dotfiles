@@ -93,7 +93,10 @@ class WindowDiffService extends Service {
         if (basename.toLowerCase() in iconAliases) {
             return iconAliases[basename.toLowerCase() ]
         }
-        return icon
+        if(icon) {
+            return icon
+        }
+        return window_class
     }
 
     arrayDiff(previous, current) {
