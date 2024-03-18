@@ -68,7 +68,7 @@ hyprland.active.connect('changed', async () => {
 const Dock = () => Widget.Window({
     name: `Dock`,
     anchor: ['bottom'],
-    margins: [24, 0],
+    margins: [16, 0],
     css: 'padding: 1px',
     child: Widget.Box({
         css: 'padding: 1px;',
