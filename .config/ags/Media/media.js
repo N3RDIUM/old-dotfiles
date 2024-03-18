@@ -3,6 +3,7 @@ const hyprland = await Service.import('hyprland');
 const audio = await Service.import('audio')
 const mpris = await Service.import('mpris');
 import Player from './player.js'
+import delay from '../delay.js';
 
 function limitString(str, limit=32) {
     if (str.length > limit) {
@@ -30,12 +31,12 @@ const Revealer = () => Widget.Revealer({
             lastInteraction.setValue(Date.now());
         })
 
-        mpris.connect('player-changed', ({ players }) => {
+        mpris.connect('player-changed', async ({ players }) => {
             revealMedia.setValue(true);
             lastInteraction.setValue(Date.now());
             
             for (var player of players) {
-                self.get_child().coverart = Utils.exec('/bin/python /home/n3rdium/.dotfiles/.config/ags/force_square.py ' + player.cover_path);
+                self.get_child().coverart = Utils.exec('/bin/python /home/n3rdium/.dotfiles/.config/ags/force_square.py ' + player.track_cover_url);
                 self.get_child().title = limitString(player.track_title);
                 if(player.length && player.position) {
                     self.get_child().progress = player.position / player.length;
