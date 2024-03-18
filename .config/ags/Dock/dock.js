@@ -1,3 +1,5 @@
+const hyprland = await Service.import('hyprland');
+
 import AppIcon from './icon.js'
 import windiff from './app_getter.js'
 import delay from './delay.js'
@@ -58,6 +60,9 @@ const Revealer = () => Widget.Revealer({
             revealDock.setValue(!revealDock.getValue())
         })
     }
+})
+hyprland.active.connect('changed', () => {
+    revealDock.setValue(false)
 })
 
 const Dock = () => Widget.Window({
