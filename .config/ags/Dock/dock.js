@@ -62,8 +62,6 @@ const Revealer = () => Widget.Revealer({
     }
 })
 hyprland.active.connect('changed', async () => {
-    revealDock.setValue(true);
-    await delay(512);
     revealDock.setValue(false);
 })
 
