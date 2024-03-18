@@ -15,6 +15,8 @@ windiff.connect('opened', (service, ...args) => {
         })
         taskbarIcons.setValue(icons)
     }
+    lastInteraction.setValue(Date.now());
+    revealDock.setValue(true);
 })
 windiff.connect('closed', async (service, ...args) => {
     if(args[0].pid == -1) { return }
@@ -23,6 +25,8 @@ windiff.connect('closed', async (service, ...args) => {
     await delay(1024)
     delete icons[args[0].pid]
     taskbarIcons.setValue(icons)
+    lastInteraction.setValue(Date.now());
+    revealDock.setValue(true);
 })
 
 const Taskbar = () => Widget.Box({
@@ -49,6 +53,7 @@ const DockLayout = () => Widget.Box({
 })
 
 const revealDock = Variable(false)
+const lastInteraction = Variable(Date.now());
 const Revealer = () => Widget.Revealer({
     revealChild: revealDock.bind(),
     transitionDuration: 500,
@@ -57,11 +62,14 @@ const Revealer = () => Widget.Revealer({
     setup: self => {
         Utils.monitorFile('/home/n3rdium/.config/ags/super_key', () => {
             revealDock.setValue(!revealDock.getValue())
+            lastInteraction.setValue(Date.now());
         })
+        setInterval(() => {
+            if (Date.now() - lastInteraction.getValue() > 2048) {
+                revealDock.setValue(false);
+            }
+        }, 1024);
     }
-})
-hyprland.active.connect('changed', async () => {
-    revealDock.setValue(false);
 })
 
 const Dock = () => Widget.Window({

@@ -27,12 +27,12 @@ const Revealer = () => Widget.Revealer({
     child: MediaLayout(),
     setup: self => {
         audio.connect('changed', async () => {
-            self.revealChild = true;
+            revealMedia.setValue(true);
             lastInteraction.setValue(Date.now());
         })
         setInterval(() => {
             if (Date.now() - lastInteraction.getValue() > 1024) {
-                self.revealChild = false;
+                revealMedia.setValue(false);
             }
         }, 1024);
     }
