@@ -1,0 +1,18 @@
+{
+    "wallpaper-changer": {
+        "wallpapers": [
+            "/home/n3rdium/.config/ags/Wallpaper/wormhole.jpg",
+            "/home/n3rdium/.config/ags/Wallpaper/gargantua.jpg",
+            "/home/n3rdium/.config/ags/Wallpaper/miller.jpg",
+            "/home/n3rdium/.config/ags/Wallpaper/mann.jpg",
+            "/home/n3rdium/.config/ags/Wallpaper/home.jpg",
+            "/home/n3rdium/.config/ags/Wallpaper/docking.jpg",
+            "/home/n3rdium/.config/ags/Wallpaper/endurance.jpg",
+            "/home/n3rdium/.config/ags/Wallpaper/ranger.png",
+            "/home/n3rdium/.config/ags/Wallpaper/docking2.jpg",
+            "/home/n3rdium/.config/ags/Wallpaper/4d.jpg"
+        ],
+        "transition-type": "any",
+        "transition-duration": 4
+    }
+}

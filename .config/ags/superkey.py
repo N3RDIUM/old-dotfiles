@@ -14,7 +14,7 @@ polluted = False
 super_held = False
 
 file = '/home/n3rdium/.config/ags/super_key'
-def touch_file():
+def notify_superkey():
     with open(file, 'w') as f:
         f.write(str(uuid4()))
 
@@ -27,7 +27,7 @@ for event in keyboard.read_loop():
             elif not event.value == 2:
                 super_held = False
                 if polluted == False:
-                    touch_file()
+                    notify_superkey()
                 polluted = False
 
         if not event.code == 125 and event.value == 1:
