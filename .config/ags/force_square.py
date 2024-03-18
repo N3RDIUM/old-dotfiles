@@ -3,9 +3,7 @@ import sys, os, shutil
 
 if not os.path.exists('/home/n3rdium/.config/ags/square_cache/'):
     os.makedirs('/home/n3rdium/.config/ags/square_cache/')
-else:
-    shutil.rmtree('/home/n3rdium/.config/ags/square_cache/')
-    os.makedirs('/home/n3rdium/.config/ags/square_cache/')
+# TODO: Periodically clear cache
 
 filename = sys.argv[1].replace('file://', '')
 file_base = os.path.basename(filename)
