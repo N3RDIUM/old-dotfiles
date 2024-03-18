@@ -1,5 +1,5 @@
 import Gtk from 'gi://Gtk';
-import delay from './delay.js'
+import delay from '../delay.js'
 
 class AppIcon extends Gtk.Box {
     static {

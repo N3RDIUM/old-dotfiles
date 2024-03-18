@@ -13,13 +13,19 @@ for device in devices:
 polluted = False
 super_held = False
 
-file = '/home/n3rdium/.config/ags/super_key'
+superkey = '/home/n3rdium/.config/ags/super_key'
 def notify_superkey():
-    with open(file, 'w') as f:
+    with open(superkey, 'w') as f:
+        f.write(str(uuid4()))
+
+audiokey = '/home/n3rdium/.config/ags/audio_key'
+def notify_audiokey():
+    with open(audiokey, 'w') as f:
         f.write(str(uuid4()))
 
 for event in keyboard.read_loop():
     if event.type == ecodes.EV_KEY:
+        print(event.code)
         if event.code == 125:
             if event.value == 1:
                 super_held = True

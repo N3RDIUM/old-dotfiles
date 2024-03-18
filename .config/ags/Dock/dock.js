@@ -2,7 +2,7 @@ const hyprland = await Service.import('hyprland');
 
 import AppIcon from './icon.js'
 import windiff from './app_getter.js'
-import delay from './delay.js'
+import delay from '../delay.js'
 
 const taskbarIcons = Variable({})
 
@@ -15,7 +15,6 @@ windiff.connect('opened', (service, ...args) => {
         })
         taskbarIcons.setValue(icons)
     }
-    console.log(Object.values(taskbarIcons.getValue()))
 })
 windiff.connect('closed', async (service, ...args) => {
     if(args[0].pid == -1) { return }
