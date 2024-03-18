@@ -1,5 +1,3 @@
-const hyprland = await Service.import('hyprland');
-
 import AppIcon from './icon.js'
 import windiff from './app_getter.js'
 import delay from '../delay.js'

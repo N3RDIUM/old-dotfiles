@@ -1,6 +1,5 @@
 const audio = await Service.import('audio')
 import Gtk from 'gi://Gtk';
-import delay from '../delay.js';
 
 class Player extends Gtk.Box {
     static {
