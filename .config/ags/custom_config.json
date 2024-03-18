@@ -17,7 +17,8 @@
     },
     "dock": {
         "icon-aliases": {
-            "Discord": "discord"
+            "Discord": "discord",
+            "obsidian": "obsidian"
         }
     }
 }

@@ -10,7 +10,6 @@ const iconsDeleteLock = Variable(false)
 windiff.connect('opened', (service, ...args) => {
     if(args[0].pid == -1) { return }
     if(args[0].details.icon) {
-        console.log(args[0].details.icon)
         let icons = taskbarIcons.getValue()
         icons[args[0].pid] = new AppIcon({
             icon: args[0].details.icon

@@ -43,14 +43,14 @@ class WindowDiffService extends Service {
         var clients = hyprland.clients;
         var clientPIDs = [];
         for(let client of clients){
-            if(client.workspace.id == hyprland.active.workspace.id) {
-                clientPIDs.push(client.pid);
-            }
             if(!(client.pid in this.window_details)) {
                 this.window_details[client.pid] = {
                     'class': client.initialClass,
-                    'icon': this.class2Icon(client.pid, client.initialClass)
+                    'icon': this.getIcon(client.pid, client.initialClass)
                 }
+            }
+            if(client.workspace.id == hyprland.active.workspace.id) {
+                clientPIDs.push(client.pid);
             }
         }
         
@@ -72,23 +72,26 @@ class WindowDiffService extends Service {
         this.clients = clientPIDs;
     }
 
-    class2Icon(pid, window_class) {
+    getIcon(pid, window_class) {
         rebuildIcons();
-        console.log(execIcons);
         let executable = Utils.exec('readlink -f /proc/' + pid.toString() + '/exe')
         let basename = Utils.exec('basename '+ executable);
         let icon = execIcons[basename]
-        console.log(basename)
-        if (icon) {
-            return this.iconAlias(window_class, basename, icon)
-        }
+        return this.iconAlias(window_class, basename, icon)
     }
     
     iconAlias(window_class, basename, icon) {
         if (window_class in iconAliases) {
-            return iconAliases[icon]
-        } if (basename.lower in iconAliases) {
-            return iconAliases[icon]
+            return iconAliases[window_class]
+        }
+        if (window_class.toLowerCase() in iconAliases) {
+            return iconAliases[window_class.toLowerCase()]
+        }
+        if (basename in iconAliases) {
+            return iconAliases[basename]
+        }
+        if (basename.toLowerCase() in iconAliases) {
+            return iconAliases[basename.toLowerCase() ]
         }
         return icon
     }
