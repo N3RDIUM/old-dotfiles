@@ -43,13 +43,15 @@ class WindowDiffService extends Service {
         var clients = hyprland.clients;
         var clientPIDs = [];
         for(let client of clients){
+            if(client.workspace.id == hyprland.active.workspace.id) {
+                clientPIDs.push(client.pid);
+            }
             if(!(client.pid in this.window_details)) {
                 this.window_details[client.pid] = {
                     'class': client.initialClass,
                     'icon': this.class2Icon(client.pid, client.class)
                 }
             }
-            clientPIDs.push(client.pid);
         }
         
         let diff = this.arrayDiff(this.clients, clientPIDs);
