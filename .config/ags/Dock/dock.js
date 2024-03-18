@@ -59,13 +59,13 @@ const Revealer = () => Widget.Revealer({
     transitionDuration: 500,
     transition: 'slide_up',
     child: DockLayout(),
-    setup: self => {
+    setup: () => {
         Utils.monitorFile('/home/n3rdium/.config/ags/super_key', () => {
             revealDock.setValue(!revealDock.getValue())
             lastInteraction.setValue(Date.now());
         })
         setInterval(() => {
-            if (Date.now() - lastInteraction.getValue() > 2048) {
+            if (Date.now() - lastInteraction.getValue() > 1024) {
                 revealDock.setValue(false);
             }
         }, 1024);

@@ -10,7 +10,6 @@ class Player extends Gtk.Box {
                 'title': ['string', 'rw'],
                 'playlist': ['string', 'rw'],
                 'artist': ['string', 'rw'],
-                'playerid': ['string', 'rw'],
             }
         })
     }

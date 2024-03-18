@@ -1,22 +1,8 @@
+// @ts-nocheck
 const hyprland = await Service.import('hyprland');
 const audio = await Service.import('audio')
 const mpris = await Service.import('mpris');
 import Player from './player.js'
-
-const players = Variable([
-    new Player({
-        coverart: '/home/n3rdium/.config/ags/Media/icons/player.svg',
-        title: 'Player',
-        playlist: 'Playlist',
-        artist: 'Artist',
-    })
-]);
-const MediaLayout = () => Widget.Box({
-    vertical: false,
-    homogeneous: false,
-    css: 'padding: 8px',
-    children: players.bind(),
-})
 
 const revealMedia = Variable(false);
 const lastInteraction = Variable(Date.now());
@@ -24,7 +10,12 @@ const Revealer = () => Widget.Revealer({
     revealChild: revealMedia.bind(),
     transitionDuration: 500,
     transition: 'slide_left',
-    child: MediaLayout(),
+    child: new Player({
+        coverart: '/home/n3rdium/.config/ags/Media/icons/player.svg',
+        title: 'Player',
+        playlist: 'Playlist',
+        artist: 'Artist',
+    }),
     setup: self => {
         audio.connect('changed', async () => {
             revealMedia.setValue(true);
