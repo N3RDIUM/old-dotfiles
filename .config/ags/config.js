@@ -6,7 +6,7 @@ import Media from "./Media/media.js";
 import delay from "./delay.js";
 
 hyprland.active.workspace.connect('changed', async () => {
-    await delay(512)
+    await delay(64)
     changeWallpaper(hyprland.active.workspace.id)
 })
 
