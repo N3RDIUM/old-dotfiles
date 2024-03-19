@@ -14,11 +14,12 @@ hyprland.active.workspace.connect('changed', async () => {
 
 Utils.execAsync('/bin/python /home/n3rdium/.config/ags/superkey.py')
 
+// TODO: Live css udpates for each window with utils.monitor
 export default {
     windows: [
         Dock(),
         Media(),
         // Monitor(), // To improve
-        // Workspaces()
+        Workspaces()
     ],
 }

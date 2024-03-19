@@ -20,5 +20,10 @@
             "Discord": "discord",
             "obsidian": "obsidian"
         }
+    },
+    "workspaces": {
+        "workspace-icons": [
+            
+        ]
     }
 }

@@ -1,0 +1,6 @@
+* { all: unset }
+window {
+    border-radius: 10px;
+    background-color: rgba(66, 66, 66, 0.32);
+    color: white;
+}

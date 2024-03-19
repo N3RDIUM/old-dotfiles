@@ -75,7 +75,7 @@ hyprland.active.connect('changed', () => {
 })
 
 App.config({
-    style: './Media/style.css',
+    style: './style.css',
 })
 
 export default Media

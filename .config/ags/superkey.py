@@ -18,11 +18,6 @@ superkey = '/home/n3rdium/.config/ags/super_key'
 def notify_superkey():
     with open(superkey, 'w') as f:
         f.write(str(uuid4()))
-
-# audiokey = '/home/n3rdium/.config/ags/audio_key'
-# def notify_audiokey():
-#     with open(audiokey, 'w') as f:
-#         f.write(str(uuid4()))
         
 monitorkey = '/home/n3rdium/.config/ags/monitor_key'
 def notify_monitorkey():
