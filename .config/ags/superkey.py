@@ -11,6 +11,7 @@ for device in devices:
         break
 
 polluted = False
+monitor_request = False
 super_held = False
 
 superkey = '/home/n3rdium/.config/ags/super_key'
@@ -18,9 +19,14 @@ def notify_superkey():
     with open(superkey, 'w') as f:
         f.write(str(uuid4()))
 
-audiokey = '/home/n3rdium/.config/ags/audio_key'
-def notify_audiokey():
-    with open(audiokey, 'w') as f:
+# audiokey = '/home/n3rdium/.config/ags/audio_key'
+# def notify_audiokey():
+#     with open(audiokey, 'w') as f:
+#         f.write(str(uuid4()))
+        
+monitorkey = '/home/n3rdium/.config/ags/monitor_key'
+def notify_monitorkey():
+    with open(monitorkey, 'w') as f:
         f.write(str(uuid4()))
 
 for event in keyboard.read_loop():
@@ -30,11 +36,19 @@ for event in keyboard.read_loop():
             if event.value == 1:
                 super_held = True
                 polluted = False
+                monitor_request = False
             elif not event.value == 2:
                 super_held = False
                 if polluted == False:
-                    notify_superkey()
+                    if monitor_request == False:
+                        notify_superkey()
+                    else:
+                        notify_monitorkey()
                 polluted = False
+                monitor_request = False
 
         if not event.code == 125 and event.value == 1:
-            polluted = True
+            if not event.code == 50:
+                polluted = True
+            else:
+                monitor_request = True

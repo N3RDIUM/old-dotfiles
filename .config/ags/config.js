@@ -3,6 +3,7 @@ const hyprland = await Service.import('hyprland');
 import { changeWallpaper } from "./Wallpaper/wallpaper_changer.js";
 import Dock from "./Dock/dock.js";
 import Media from "./Media/media.js";
+import Monitor from './SysMonitor/system_monitor.js'
 import delay from "./delay.js";
 
 hyprland.active.workspace.connect('changed', async () => {
@@ -15,6 +16,7 @@ Utils.execAsync('/bin/python /home/n3rdium/.config/ags/superkey.py')
 export default {
     windows: [
         Dock(),
-        Media()
+        Media(),
+        Monitor()
     ],
 }

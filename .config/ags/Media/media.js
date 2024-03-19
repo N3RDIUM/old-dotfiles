@@ -11,6 +11,7 @@ function limitString(str, limit=32) {
     return str;
 }
 
+// TODO: Add multiple player support
 const revealMedia = Variable(false);
 const lastInteraction = Variable(Date.now());
 const mouseIn = Variable(false);
@@ -18,7 +19,7 @@ const Revealer = () => Widget.Revealer({
     revealChild: revealMedia.bind(),
     transitionDuration: 500,
     transition: 'slide_left',
-    child: new Player({ coverart: '', title: '', progress: 0 }),
+    child: new Player({ coverart: '', title: '', progress: 0, playeridx: 0 }),
     setup: self => {
         setInterval(() => {
             if(mouseIn.getValue()) {
