@@ -3,7 +3,6 @@ const hyprland = await Service.import('hyprland');
 const audio = await Service.import('audio')
 const mpris = await Service.import('mpris');
 import Player from './player.js'
-import delay from '../delay.js';
 
 function limitString(str, limit=32) {
     if (str.length > limit) {

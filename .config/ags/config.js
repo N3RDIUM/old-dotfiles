@@ -5,7 +5,7 @@ import Dock from "./Dock/dock.js";
 import Media from "./Media/media.js";
 import delay from "./delay.js";
 
-hyprland.active.connect('changed', async () => {
+hyprland.active.workspace.connect('changed', async () => {
     await delay(512)
     changeWallpaper(hyprland.active.workspace.id)
 })

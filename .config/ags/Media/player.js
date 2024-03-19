@@ -1,5 +1,7 @@
-const audio = await Service.import('audio')
+const audio = await Service.import('audio');
+const mpris = await Service.import('mpris');
 import Gtk from 'gi://Gtk';
+import MarqueeLabel from './marqueeLabel.js';
 
 class Player extends Gtk.Box {
     static {
@@ -25,7 +27,7 @@ class Player extends Gtk.Box {
             label: this.title,
             css: 'font-size: 16px; padding: 4px; color: #ffffff;'
         })
-        
+
         this.volumeWidget = Widget.CircularProgress({
             css: 'font-size: 2px;'
                 + 'background-color: transparent;'
@@ -57,7 +59,11 @@ class Player extends Gtk.Box {
             child: Widget.Icon({
                 css: 'font-size: 24px;',
                 icon: '/home/n3rdium/.config/ags/Media/icons/play.svg'
-            })
+            }),
+            onClicked: async self => {
+                await mpris.players[0].playPause()
+                if(mpris.players[0]) {}
+            }
         })
         this.prev = Widget.Button({
             child: Widget.Icon({
