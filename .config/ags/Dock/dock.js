@@ -1,3 +1,5 @@
+const hyprland = await Service.import('hyprland')
+
 import AppIcon from './icon.js'
 import windiff from './app_getter.js'
 import delay from '../delay.js'
@@ -34,7 +36,7 @@ windiff.connect('closed', async (service, ...args) => {
 const Taskbar = () => Widget.Box({
     vertical: false,
     homogeneous: false,
-    css: 'padding: 8px',
+    css: 'padding: 8px; padding-left: 16px;',
     children: taskbarIcons.bind().as(x => Object.values(x))
 })
 
@@ -45,12 +47,46 @@ const DockLayout = () => Widget.Box({
     children: [
         Widget.Icon({
             icon: '/home/n3rdium/.config/ags/Dock/icons/grid.svg',
-            css: 'font-size: 48px; padding: 12px;'
+            css: 'font-size: 48px; padding: 12px; padding-right: 18px;'
         }),
-        Widget.Separator({
-            css: 'background: #ededed; min-width: 4px; border-radius: 2px; margin-left: 8px; margin-right: 4px;'
+        Widget.Revealer({
+            child: Widget.Separator({
+                css: 'background: #ededed; min-width: 4px; border-radius: 2px;'
+            }),
+            transitionDuration: 500,
+            transition: 'slide_right',
+            revealChild: true,
+            setup: self => {
+                hyprland.connect('changed', () => {
+                    var clients = hyprland.clients.filter(x => x.workspace.id == hyprland.active.workspace.id)
+                    if(clients.length == 0) {
+                        self.reveal_child = false
+                    } else {
+                        self.reveal_child = true
+                    }
+                })
+            }
         }),
-        Taskbar()
+        Taskbar(),
+        Widget.Revealer({
+            child: Widget.Icon({
+                icon: '/home/n3rdium/.config/ags/Dock/icons/launcher.svg',
+                css: 'font-size: 48px; padding-right: 16px;'
+            }),
+            transitionDuration: 500,
+            transition: 'slide_right',
+            revealChild: true,
+            setup: self => {
+                hyprland.connect('changed', () => {
+                    var clients = hyprland.clients.filter(x => x.workspace.id == hyprland.active.workspace.id)
+                    if(clients.length == 0) {
+                        self.reveal_child = true
+                    } else {
+                        self.reveal_child = false
+                    }
+                })
+            }
+        }),
     ]
 })
 
@@ -67,7 +103,7 @@ const Revealer = () => Widget.Revealer({
             lastInteraction.setValue(Date.now());
         })
         setInterval(() => {
-            if (Date.now() - lastInteraction.getValue() > 4096) {
+            if (Date.now() - lastInteraction.getValue() > 2048) {
                 revealDock.setValue(false);
             }
         }, 1024);
