@@ -36,7 +36,6 @@ for event in keyboard.read_loop():
             if event.value == 1:
                 super_held = True
                 polluted = False
-                monitor_request = False
             elif not event.value == 2:
                 super_held = False
                 if polluted == False:
