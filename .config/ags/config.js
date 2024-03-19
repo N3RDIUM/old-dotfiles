@@ -3,8 +3,10 @@ const hyprland = await Service.import('hyprland');
 import { changeWallpaper } from "./Wallpaper/wallpaper_changer.js";
 import Dock from "./Dock/dock.js";
 import Media from "./Media/media.js";
+import delay from "./delay.js";
 
-hyprland.active.connect('changed', () => {
+hyprland.active.connect('changed', async () => {
+    await delay(512)
     changeWallpaper(hyprland.active.workspace.id)
 })
 

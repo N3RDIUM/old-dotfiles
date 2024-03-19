@@ -67,7 +67,7 @@ const Revealer = () => Widget.Revealer({
             lastInteraction.setValue(Date.now());
         })
         setInterval(() => {
-            if (Date.now() - lastInteraction.getValue() > 1024) {
+            if (Date.now() - lastInteraction.getValue() > 4096) {
                 revealDock.setValue(false);
             }
         }, 1024);
