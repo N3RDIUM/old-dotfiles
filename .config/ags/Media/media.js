@@ -38,11 +38,6 @@ const Revealer = () => Widget.Revealer({
             for (var player of players) {
                 self.get_child().coverart = Utils.exec('/bin/python /home/n3rdium/.dotfiles/.config/ags/force_square.py ' + player.track_cover_url);
                 self.get_child().title = limitString(player.track_title);
-                if(player.length && player.position) {
-                    self.get_child().progress = player.position / player.length;
-                } else {
-                    self.get_child().progress = 0;
-                }
             }
         });
 

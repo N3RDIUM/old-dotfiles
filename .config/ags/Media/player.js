@@ -25,10 +25,7 @@ class Player extends Gtk.Box {
             label: this.title,
             css: 'font-size: 16px; padding: 4px; color: #ffffff;'
         })
-        this.musicProgress = Widget.ProgressBar({ 
-            value: 0,
-            css: 'margin-top: 4px; margin-bottom: 4px;'
-        })
+        
         this.volumeWidget = Widget.CircularProgress({
             css: 'font-size: 2px;'
                 + 'background-color: transparent;'
@@ -93,7 +90,7 @@ class Player extends Gtk.Box {
         this.controlsWrapper = Widget.CenterBox({
             vertical: false,
             homogeneous: false,
-            css: 'margin-top: 8px; min-width: 172px;',
+            css: 'margin-top: 16px; min-width: 172px;',
             startWidget: this.volumeWidget,
             centerWidget: this.playbackControlsWrapper,
             endWidget: this.playerSwitch,
@@ -105,7 +102,7 @@ class Player extends Gtk.Box {
             css: 'padding: 8px; min-width: 256px;',
             children: [
                 this.titleLabel,
-                this.musicProgress,
+                // this.musicProgress,
                 this.controlsWrapper
             ]
         })
