@@ -56,13 +56,47 @@ class Player extends Gtk.Box {
             }),
         })
 
-        this.controlsWrapper = Widget.Box({
+        this.pausePlay = Widget.Button({
+            child: Widget.Icon({
+                css: 'font-size: 24px;',
+                icon: '/home/n3rdium/.config/ags/Media/icons/play.svg'
+            })
+        })
+        this.prev = Widget.Button({
+            child: Widget.Icon({
+                css: 'font-size: 24px;',
+                icon: '/home/n3rdium/.config/ags/Media/icons/previous.svg'
+            })
+        })
+        this.next = Widget.Button({
+            child: Widget.Icon({
+                css: 'font-size: 24px;',
+                icon: '/home/n3rdium/.config/ags/Media/icons/next.svg'
+            })
+        })
+        this.playerSwitch = Widget.Button({
+            child: Widget.Icon({
+                css: 'font-size: 24px;',
+                icon: '/home/n3rdium/.config/ags/Media/icons/disc.svg'
+            })
+        })
+
+        this.playbackControlsWrapper = Widget.CenterBox({
+            vertical: false,
+            homogeneous: false,
+            css: 'padding: 8px; min-width: 172px;',
+            startWidget: this.prev,
+            centerWidget: this.pausePlay,
+            endWidget: this.next
+        })
+
+        this.controlsWrapper = Widget.CenterBox({
             vertical: false,
             homogeneous: false,
             css: 'margin-top: 8px; min-width: 172px;',
-            children: [
-                this.volumeWidget
-            ]
+            startWidget: this.volumeWidget,
+            centerWidget: this.playbackControlsWrapper,
+            endWidget: this.playerSwitch,
         })
 
         this.rightPaneWrapper = Widget.Box({
