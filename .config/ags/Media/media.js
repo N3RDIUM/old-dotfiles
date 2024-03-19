@@ -69,6 +69,10 @@ const Media = () => Widget.Window({
     }),
 })
 
+hyprland.active.connect('changed', () => {
+    mouseIn.setValue(false);
+})
+
 App.config({
     style: './Media/style.css',
 })

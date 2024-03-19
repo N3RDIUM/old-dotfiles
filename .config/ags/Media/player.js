@@ -75,9 +75,10 @@ class Player extends Gtk.Box {
                     })
                 }
             }),
-            setup: async self => {
-                await delay(512)
-                
+            onClicked: () => {
+                if(mpris.players[this.pidx.getValue()].can_play) {
+                    mpris.players[this.pidx.getValue()].playPause()
+                }
             }
         })
         
@@ -85,19 +86,36 @@ class Player extends Gtk.Box {
             child: Widget.Icon({
                 css: 'font-size: 24px;',
                 icon: '/home/n3rdium/.config/ags/Media/icons/previous.svg'
-            })
+            }),
+            onClicked: () => {
+                if(mpris.players[this.pidx.getValue()].can_go_next) {
+                    mpris.players[this.pidx.getValue()].next()
+                }
+            }
         })
         this.next = Widget.Button({
             child: Widget.Icon({
                 css: 'font-size: 24px;',
                 icon: '/home/n3rdium/.config/ags/Media/icons/next.svg'
-            })
+            }),
+            onClicked: () => {
+                if(mpris.players[this.pidx.getValue()].can_go_prev) {
+                    mpris.players[this.pidx.getValue()].previous()
+                }
+            }
         })
         this.playerSwitch = Widget.Button({
             child: Widget.Icon({
                 css: 'font-size: 24px;',
                 icon: '/home/n3rdium/.config/ags/Media/icons/disc.svg'
-            })
+            }),
+            onClicked: () => {
+                if(mpris.players[this.pidx.getValue() + 1]) {
+                    this.pidx.setValue(this.pidx.getValue() + 1)
+                } else {
+                    this.pidx.setValue(0)
+                }
+            }
         })
 
         this.playbackControlsWrapper = Widget.CenterBox({

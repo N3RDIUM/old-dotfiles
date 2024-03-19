@@ -133,6 +133,10 @@ const Dock = () => Widget.Window({
     }),
 })
 
+hyprland.active.connect('changed', () => {
+    mouseIn.setValue(false)
+})
+
 App.config({
     style: './Dock/style.css',
 })
