@@ -92,6 +92,7 @@ const DockLayout = () => Widget.Box({
 
 const revealDock = Variable(false)
 const lastInteraction = Variable(Date.now());
+const mouseIn = Variable(false);
 const Revealer = () => Widget.Revealer({
     revealChild: revealDock.bind(),
     transitionDuration: 500,
@@ -103,6 +104,9 @@ const Revealer = () => Widget.Revealer({
             lastInteraction.setValue(Date.now());
         })
         setInterval(() => {
+            if(mouseIn.getValue()) {
+                lastInteraction.setValue(Date.now());
+            }
             if (Date.now() - lastInteraction.getValue() > 2048) {
                 revealDock.setValue(false);
             }
@@ -117,7 +121,15 @@ const Dock = () => Widget.Window({
     css: 'padding: 1px',
     child: Widget.Box({
         css: 'padding: 1px;',
-        child: Revealer(),
+        child: Widget.EventBox({
+            child: Revealer(),
+            onHover: () => {
+                mouseIn.setValue(true)
+            },
+            onHoverLost: () => {
+                mouseIn.setValue(false)
+            }
+        }),
     }),
 })
 

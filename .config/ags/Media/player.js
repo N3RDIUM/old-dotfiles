@@ -1,7 +1,8 @@
 const audio = await Service.import('audio');
 const mpris = await Service.import('mpris');
+import delay from '../delay.js';
 import Gtk from 'gi://Gtk';
-import MarqueeLabel from './marqueeLabel.js';
+const players = mpris.bind("players");
 
 class Player extends Gtk.Box {
     static {
@@ -10,12 +11,14 @@ class Player extends Gtk.Box {
                 'coverart': ['string', 'rw'],
                 'title': ['string', 'rw'],
                 'progress': ['float', 'rw'],
+                'playeridx': ['int', 'rw'],
             }
         })
     }
 
     constructor(props) {
         super(props);
+        this.pidx = Variable(0)
 
         this.iconWidget = Widget.Icon({
             icon: this.coverart,
@@ -58,13 +61,26 @@ class Player extends Gtk.Box {
         this.pausePlay = Widget.Button({
             child: Widget.Icon({
                 css: 'font-size: 24px;',
-                icon: '/home/n3rdium/.config/ags/Media/icons/play.svg'
+                icon: '/home/n3rdium/.config/ags/Media/icons/play.svg',
+                setup: self => {
+                    mpris.connect('changed', () => {
+                        let status = mpris.players[this.pidx.getValue()].play_back_status
+                        if(status == "Playing") {
+                            self.icon = '/home/n3rdium/.config/ags/Media/icons/play.svg'
+                        } else if (status == "Paused") {
+                            self.icon = '/home/n3rdium/.config/ags/Media/icons/pause.svg'
+                        } else {
+                            self.icon = '/home/n3rdium/.config/ags/Media/icons/play.svg'
+                        }
+                    })
+                }
             }),
-            onClicked: async self => {
-                await mpris.players[0].playPause()
-                if(mpris.players[0]) {}
+            setup: async self => {
+                await delay(512)
+                
             }
         })
+        
         this.prev = Widget.Button({
             child: Widget.Icon({
                 css: 'font-size: 24px;',
@@ -112,7 +128,7 @@ class Player extends Gtk.Box {
                 this.controlsWrapper
             ]
         })
-        this.add(this.rightPaneWrapper)
+        this.add(this.rightPaneWrapper);
     }
 
     get coverart() {
@@ -131,12 +147,12 @@ class Player extends Gtk.Box {
         this.titleLabel.label = title;
     }
 
-    get progress() {
-        return this._progress;
+    get playeridx() {
+        return this._playeridx;
     }
-    set progress(progress) {
-        this._progress = progress;
-        this.musicProgress.value = progress;
+    set playeridx(playeridx) {
+        this._playeridx = playeridx
+        this.pidx.setValue(playeridx)
     }
 }
 

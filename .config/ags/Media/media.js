@@ -13,6 +13,7 @@ function limitString(str, limit=32) {
 
 const revealMedia = Variable(false);
 const lastInteraction = Variable(Date.now());
+const mouseIn = Variable(false);
 const Revealer = () => Widget.Revealer({
     revealChild: revealMedia.bind(),
     transitionDuration: 500,
@@ -20,6 +21,9 @@ const Revealer = () => Widget.Revealer({
     child: new Player({ coverart: '', title: '', progress: 0 }),
     setup: self => {
         setInterval(() => {
+            if(mouseIn.getValue()) {
+                lastInteraction.setValue(Date.now());
+            }
             if (Date.now() - lastInteraction.getValue() > 1024) {
                 revealMedia.setValue(false);
             }
@@ -53,7 +57,15 @@ const Media = () => Widget.Window({
     css: 'padding: 1px',
     child: Widget.Box({
         css: 'padding: 1px;',
-        child: Revealer(),
+        child: Widget.EventBox({
+            child: Revealer(),
+            onHover: () => {
+                mouseIn.setValue(true)
+            },
+            onHoverLost: () => {
+                mouseIn.setValue(false)
+            }
+        }),
     }),
 })
 
