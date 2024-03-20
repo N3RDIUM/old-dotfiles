@@ -12,8 +12,8 @@ These are my legendary WIP dotfiles (they will prlly be maintained forever!).
 They're managed with GNU's `stow` utility.
 
 # Screenshots
-
-Coming soon! This repo is under heavy development. Screenshots will be put up when all planned features are added
+![screenshot1](./Screenshots/First.png)
+<p align=center>Please note that this config is not fully completed and that I didn't have time for a proper screenshot.</p>
 
 # Features
 Work in progress!
