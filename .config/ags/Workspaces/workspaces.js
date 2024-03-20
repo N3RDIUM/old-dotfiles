@@ -192,8 +192,7 @@ const Workspaces = () => Widget.Window({
     name: `Workspaces`,
     anchor: ['top', 'left'],
     margins: [8, 8],
-    css: 'padding: 1px;'
-        + 'background-color: rgba(0.8, 0.8, 0.8, 0.32)',
+    css: 'padding: 1px;',
     child: Widget.Box({
         css: 'padding: 1px;',
         child: Widget.EventBox({
