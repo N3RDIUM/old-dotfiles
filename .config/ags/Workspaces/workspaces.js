@@ -1,5 +1,6 @@
 const hyprland = await Service.import('hyprland')
 
+// TODO: Go to workspace on mouse click
 const Layout = () => Widget.Box({
     vertical: false,
     homogeneous: true,

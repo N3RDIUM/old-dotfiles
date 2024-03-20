@@ -15,6 +15,9 @@ They're managed with GNU's `stow` utility.
 
 Coming soon! This repo is under heavy development. Screenshots will be put up when all planned features are added
 
+# Features
+Work in progress!
+
 # Installation
 
 Installation of these dotfiles should be pretty straight forward. First you need to install the...
@@ -28,12 +31,12 @@ kitty
 aylurs-gtk-shell
 sddm
 swww
-ttf-fira-code
+ttf-fira-code (My favourite font)
 zsh
 hyprshot
 gvfs
 dolphin
-wofi
+wofi (Will be superseded by a native AGS launcher!)
 ```
 
 After you install these, you *might* want to have a look at my...
@@ -47,12 +50,10 @@ discord
 firefox
 visual-studio-code-bin
 nuclear-player-bin
+obsidian
 ```
 
 ## Step Three
-Work in progress!
-
-# Features
 Work in progress!
 
 # Keybinds
