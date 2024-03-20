@@ -8,61 +8,151 @@ const Layout = () => Widget.Box({
         Widget.Button({
             child: Widget.Icon({
                 icon: '/home/n3rdium/.config/ags/Workspaces/icons/code.svg',
-                css: 'font-size: 32px; padding-left: 4px; padding-right: 4px;'
+                css: 'font-size: 32px; padding-left: 4px; padding-right: 4px;',
+                setup: self => {
+                    hyprland.active.workspace.connect('changed', () => {
+                        if(hyprland.active.workspace.id == 1) {
+                            self.css = 'font-size: 32px; padding-left: 4px; padding-right: 4px; background: rgba(200, 200, 200, 0.8); border-radius: 4px;';
+                        } else {
+                            self.css = 'font-size: 32px; padding-left: 4px; padding-right: 4px;';
+                        }
+                    })
+                }
             })
         }),
         Widget.Button({
             child: Widget.Icon({
                 icon: '/home/n3rdium/.config/ags/Workspaces/icons/terminal.svg',
-                css: 'font-size: 32px; padding-left: 4px; padding-right: 4px;'
+                css: 'font-size: 32px; padding-left: 4px; padding-right: 4px;',
+                setup: self => {
+                    hyprland.active.workspace.connect('changed', () => {
+                        if(hyprland.active.workspace.id == 2) {
+                            self.css = 'font-size: 32px; padding-left: 4px; padding-right: 4px; background: rgba(200, 200, 200, 0.8); border-radius: 4px;';
+                        } else {
+                            self.css = 'font-size: 32px; padding-left: 4px; padding-right: 4px;';
+                        }
+                    })
+                }
             })
         }),
         Widget.Button({
             child: Widget.Icon({
                 icon: '/home/n3rdium/.config/ags/Workspaces/icons/web.svg',
-                css: 'font-size: 34px; padding-left: 4px; padding-right: 4px;'
+                css: 'font-size: 34px; padding-left: 4px; padding-right: 4px;',
+                setup: self => {
+                    hyprland.active.workspace.connect('changed', () => {
+                        if(hyprland.active.workspace.id == 3) {
+                            self.css = 'font-size: 34px; padding-left: 4px; padding-right: 4px; background: rgba(200, 200, 200, 0.8); border-radius: 4px;';
+                        } else {
+                            self.css = 'font-size: 34px; padding-left: 4px; padding-right: 4px;';
+                        }
+                    })
+                }
             })
         }),
         Widget.Button({
             child: Widget.Icon({
                 icon: '/home/n3rdium/.config/ags/Workspaces/icons/files.svg',
-                css: 'font-size: 34px; padding-left: 4px; padding-right: 4px;'
+                css: 'font-size: 34px; padding-left: 4px; padding-right: 4px;',
+                setup: self => {
+                    hyprland.active.workspace.connect('changed', () => {
+                        if(hyprland.active.workspace.id == 4) {
+                            self.css = 'font-size: 34px; padding-left: 4px; padding-right: 4px; background: rgba(200, 200, 200, 0.8); border-radius: 4px;';
+                        } else {
+                            self.css = 'font-size: 34px; padding-left: 4px; padding-right: 4px;';
+                        }
+                    })
+                }
             })
         }),
         Widget.Button({
             child: Widget.Icon({
                 icon: '/home/n3rdium/.config/ags/Workspaces/icons/chat.svg',
-                css: 'font-size: 32px; padding-left: 4px; padding-right: 4px;'
+                css: 'font-size: 32px; padding-left: 4px; padding-right: 4px;',
+                setup: self => {
+                    hyprland.active.workspace.connect('changed', () => {
+                        if(hyprland.active.workspace.id == 5) {
+                            self.css = 'font-size: 32px; padding-left: 4px; padding-right: 4px; background: rgba(200, 200, 200, 0.8); border-radius: 4px;';
+                        } else {
+                            self.css = 'font-size: 32px; padding-left: 4px; padding-right: 4px;';
+                        }
+                    })
+                }
             })
         }),
         Widget.Button({
             child: Widget.Icon({
                 icon: '/home/n3rdium/.config/ags/Workspaces/icons/music.svg',
-                css: 'font-size: 28px; padding-left: 4px; padding-right: 4px;'
+                css: 'font-size: 28px; padding-left: 4px; padding-right: 4px;',
+                setup: self => {
+                    hyprland.active.workspace.connect('changed', () => {
+                        if(hyprland.active.workspace.id == 6) {
+                            self.css = 'font-size: 28px; padding-left: 4px; padding-right: 4px; background: rgba(200, 200, 200, 0.8); border-radius: 4px;';
+                        } else {
+                            self.css = 'font-size: 28px; padding-left: 4px; padding-right: 4px;';
+                        }
+                    })
+                }
             })
         }),
         Widget.Button({
             child: Widget.Icon({
                 icon: '/home/n3rdium/.config/ags/Workspaces/icons/astro.svg',
-                css: 'font-size: 32px; padding-left: 4px; padding-right: 4px;'
+                css: 'font-size: 32px; padding-left: 4px; padding-right: 4px;',
+                setup: self => {
+                    hyprland.active.workspace.connect('changed', () => {
+                        if(hyprland.active.workspace.id == 7) {
+                            self.css = 'font-size: 32px; padding-left: 4px; padding-right: 4px; background: rgba(200, 200, 200, 0.8); border-radius: 4px;';
+                        } else {
+                            self.css = 'font-size: 32px; padding-left: 4px; padding-right: 4px;';
+                        }
+                    })
+                }
             })
         }),
         Widget.Button({
             child: Widget.Icon({
                 icon: '/home/n3rdium/.config/ags/Workspaces/icons/notes.svg',
-                css: 'font-size: 28px; padding-left: 4px; padding-right: 4px;'
+                css: 'font-size: 28px; padding-left: 4px; padding-right: 4px;',
+                setup: self => {
+                    hyprland.active.workspace.connect('changed', () => {
+                        if(hyprland.active.workspace.id == 8) {
+                            self.css = 'font-size: 28px; padding-left: 4px; padding-right: 4px; background: rgba(200, 200, 200, 0.8); border-radius: 4px;';
+                        } else {
+                            self.css = 'font-size: 28px; padding-left: 4px; padding-right: 4px;';
+                        }
+                    })
+                }
             })
         }),
         Widget.Button({
             child: Widget.Icon({
                 icon: '/home/n3rdium/.config/ags/Workspaces/icons/other.svg',
-                css: 'font-size: 34px; padding-left: 4px; padding-right: 4px;'
+                css: 'font-size: 34px; padding-left: 4px; padding-right: 4px;',
+                setup: self => {
+                    hyprland.active.workspace.connect('changed', () => {
+                        if(hyprland.active.workspace.id == 9) {
+                            self.css = 'font-size: 34px; padding-left: 4px; padding-right: 4px; background: rgba(200, 200, 200, 0.8); border-radius: 4px;';
+                        } else {
+                            self.css = 'font-size: 34px; padding-left: 4px; padding-right: 4px;';
+                        }
+                    })
+                }
             })
         }),
         Widget.Button({
             child: Widget.Icon({
                 icon: '/home/n3rdium/.config/ags/Workspaces/icons/dashboard.svg',
-                css: 'font-size: 28px; padding-left: 4px; padding-right: 4px;'
+                css: 'font-size: 28px; padding-left: 4px; padding-right: 4px;',
+                setup: self => {
+                    hyprland.active.workspace.connect('changed', () => {
+                        if(hyprland.active.workspace.id == 10) {
+                            self.css = 'font-size: 28px; padding-left: 4px; padding-right: 4px; background: rgba(200, 200, 200, 0.8); border-radius: 4px;';
+                        } else {
+                            self.css = 'font-size: 28px; padding-left: 4px; padding-right: 4px;';
+                        }
+                    })
+                }
             })
         })
     ]
