@@ -93,8 +93,11 @@ const DockLayout = () => Widget.Box({
 const revealDock = Variable(false)
 const lastInteraction = Variable(Date.now());
 const mouseIn = Variable(false);
+const pose = Variable(false);
 const Revealer = () => Widget.Revealer({
-    revealChild: revealDock.bind(),
+    revealChild: revealDock.bind().as(
+        x => x || pose.getValue()
+    ),
     transitionDuration: 500,
     transition: 'slide_up',
     child: DockLayout(),
@@ -135,6 +138,15 @@ const Dock = () => Widget.Window({
 
 hyprland.active.connect('changed', () => {
     mouseIn.setValue(false)
+})
+
+Utils.monitorFile('/home/n3rdium/.config/ags/pose', () => {
+    var contents = Utils.readFile('/home/n3rdium/.config/ags/pose')
+    if(Number(contents) == 0) {
+        pose.setValue(false)
+    } else {
+        pose.setValue(true)
+    }
 })
 
 App.config({

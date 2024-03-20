@@ -13,7 +13,7 @@ const Layout = () => Widget.Box({
                 setup: self => {
                     hyprland.active.workspace.connect('changed', () => {
                         if(hyprland.active.workspace.id == 1) {
-                            self.css = 'font-size: 32px; padding-left: 4px; padding-right: 4px; background: rgba(200, 200, 200, 0.8); border-radius: 4px;';
+                            self.css = 'font-size: 32px; padding-left: 4px; padding-right: 4px; background: rgba(169, 169, 169, 0.95); border-radius: 4px;';
                         } else {
                             self.css = 'font-size: 32px; padding-left: 4px; padding-right: 4px;';
                         }
@@ -28,7 +28,7 @@ const Layout = () => Widget.Box({
                 setup: self => {
                     hyprland.active.workspace.connect('changed', () => {
                         if(hyprland.active.workspace.id == 2) {
-                            self.css = 'font-size: 32px; padding-left: 4px; padding-right: 4px; background: rgba(200, 200, 200, 0.8); border-radius: 4px;';
+                            self.css = 'font-size: 32px; padding-left: 4px; padding-right: 4px; background: rgba(169, 169, 169, 0.95); border-radius: 4px;';
                         } else {
                             self.css = 'font-size: 32px; padding-left: 4px; padding-right: 4px;';
                         }
@@ -43,7 +43,7 @@ const Layout = () => Widget.Box({
                 setup: self => {
                     hyprland.active.workspace.connect('changed', () => {
                         if(hyprland.active.workspace.id == 3) {
-                            self.css = 'font-size: 34px; padding-left: 4px; padding-right: 4px; background: rgba(200, 200, 200, 0.8); border-radius: 4px;';
+                            self.css = 'font-size: 34px; padding-left: 4px; padding-right: 4px; background: rgba(169, 169, 169, 0.95); border-radius: 4px;';
                         } else {
                             self.css = 'font-size: 34px; padding-left: 4px; padding-right: 4px;';
                         }
@@ -58,7 +58,7 @@ const Layout = () => Widget.Box({
                 setup: self => {
                     hyprland.active.workspace.connect('changed', () => {
                         if(hyprland.active.workspace.id == 4) {
-                            self.css = 'font-size: 34px; padding-left: 4px; padding-right: 4px; background: rgba(200, 200, 200, 0.8); border-radius: 4px;';
+                            self.css = 'font-size: 34px; padding-left: 4px; padding-right: 4px; background: rgba(169, 169, 169, 0.95); border-radius: 4px;';
                         } else {
                             self.css = 'font-size: 34px; padding-left: 4px; padding-right: 4px;';
                         }
@@ -73,7 +73,7 @@ const Layout = () => Widget.Box({
                 setup: self => {
                     hyprland.active.workspace.connect('changed', () => {
                         if(hyprland.active.workspace.id == 5) {
-                            self.css = 'font-size: 32px; padding-left: 4px; padding-right: 4px; background: rgba(200, 200, 200, 0.8); border-radius: 4px;';
+                            self.css = 'font-size: 32px; padding-left: 4px; padding-right: 4px; background: rgba(169, 169, 169, 0.95); border-radius: 4px;';
                         } else {
                             self.css = 'font-size: 32px; padding-left: 4px; padding-right: 4px;';
                         }
@@ -88,7 +88,7 @@ const Layout = () => Widget.Box({
                 setup: self => {
                     hyprland.active.workspace.connect('changed', () => {
                         if(hyprland.active.workspace.id == 6) {
-                            self.css = 'font-size: 28px; padding-left: 4px; padding-right: 4px; background: rgba(200, 200, 200, 0.8); border-radius: 4px;';
+                            self.css = 'font-size: 28px; padding-left: 4px; padding-right: 4px; background: rgba(169, 169, 169, 0.95); border-radius: 4px;';
                         } else {
                             self.css = 'font-size: 28px; padding-left: 4px; padding-right: 4px;';
                         }
@@ -103,7 +103,7 @@ const Layout = () => Widget.Box({
                 setup: self => {
                     hyprland.active.workspace.connect('changed', () => {
                         if(hyprland.active.workspace.id == 7) {
-                            self.css = 'font-size: 32px; padding-left: 4px; padding-right: 4px; background: rgba(200, 200, 200, 0.8); border-radius: 4px;';
+                            self.css = 'font-size: 32px; padding-left: 4px; padding-right: 4px; background: rgba(169, 169, 169, 0.95); border-radius: 4px;';
                         } else {
                             self.css = 'font-size: 32px; padding-left: 4px; padding-right: 4px;';
                         }
@@ -118,7 +118,7 @@ const Layout = () => Widget.Box({
                 setup: self => {
                     hyprland.active.workspace.connect('changed', () => {
                         if(hyprland.active.workspace.id == 8) {
-                            self.css = 'font-size: 28px; padding-left: 4px; padding-right: 4px; background: rgba(200, 200, 200, 0.8); border-radius: 4px;';
+                            self.css = 'font-size: 28px; padding-left: 4px; padding-right: 4px; background: rgba(169, 169, 169, 0.95); border-radius: 4px;';
                         } else {
                             self.css = 'font-size: 28px; padding-left: 4px; padding-right: 4px;';
                         }
@@ -133,7 +133,7 @@ const Layout = () => Widget.Box({
                 setup: self => {
                     hyprland.active.workspace.connect('changed', () => {
                         if(hyprland.active.workspace.id == 9) {
-                            self.css = 'font-size: 34px; padding-left: 4px; padding-right: 4px; background: rgba(200, 200, 200, 0.8); border-radius: 4px;';
+                            self.css = 'font-size: 34px; padding-left: 4px; padding-right: 4px; background: rgba(169, 169, 169, 0.95); border-radius: 4px;';
                         } else {
                             self.css = 'font-size: 34px; padding-left: 4px; padding-right: 4px;';
                         }
@@ -148,7 +148,7 @@ const Layout = () => Widget.Box({
                 setup: self => {
                     hyprland.active.workspace.connect('changed', () => {
                         if(hyprland.active.workspace.id == 10) {
-                            self.css = 'font-size: 28px; padding-left: 4px; padding-right: 4px; background: rgba(200, 200, 200, 0.8); border-radius: 4px;';
+                            self.css = 'font-size: 28px; padding-left: 4px; padding-right: 4px; background: rgba(169, 169, 169, 0.95); border-radius: 4px;';
                         } else {
                             self.css = 'font-size: 28px; padding-left: 4px; padding-right: 4px;';
                         }
@@ -162,8 +162,11 @@ const Layout = () => Widget.Box({
 const mouseIn = Variable(true);
 const revealWorkspaces = Variable(false);
 const lastInteraction = Variable(Date.now());
+const pose = Variable(false);
 const Revealer = () => Widget.Revealer({
-    revealChild: revealWorkspaces.bind(),
+    revealChild: revealWorkspaces.bind().as(
+        x => x || pose.getValue()
+    ),
     transitionDuration: 500,
     transition: 'slide_left',
     css: 'padding: 4px; padding-top: 8px; padding-bottom: 8px;',
@@ -208,6 +211,16 @@ const Workspaces = () => Widget.Window({
 hyprland.active.connect('changed', () => {
     mouseIn.setValue(false);
 })
+
+Utils.monitorFile('/home/n3rdium/.config/ags/pose', () => {
+    var contents = Utils.readFile('/home/n3rdium/.config/ags/pose')
+    if(Number(contents) == 0) {
+        pose.setValue(false)
+    } else {
+        pose.setValue(true)
+    }
+})
+
 
 App.config({
     style: './style.css',

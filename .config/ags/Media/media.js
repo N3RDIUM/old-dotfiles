@@ -15,8 +15,11 @@ function limitString(str, limit=32) {
 const revealMedia = Variable(false);
 const lastInteraction = Variable(Date.now());
 const mouseIn = Variable(false);
+const pose = Variable(false);
 const Revealer = () => Widget.Revealer({
-    revealChild: revealMedia.bind(),
+    revealChild: revealMedia.bind().as(
+        x => x || pose.getValue()
+    ),
     transitionDuration: 500,
     transition: 'slide_left',
     child: new Player({ coverart: '', title: '', progress: 0, playeridx: 0 }),
@@ -83,6 +86,15 @@ const Media = () => Widget.Window({
 
 hyprland.active.connect('changed', () => {
     mouseIn.setValue(false);
+})
+
+Utils.monitorFile('/home/n3rdium/.config/ags/pose', () => {
+    var contents = Utils.readFile('/home/n3rdium/.config/ags/pose')
+    if(Number(contents) == 0) {
+        pose.setValue(false)
+    } else {
+        pose.setValue(true)
+    }
 })
 
 App.config({
