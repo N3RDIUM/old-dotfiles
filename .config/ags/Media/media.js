@@ -40,14 +40,25 @@ const Revealer = () => Widget.Revealer({
             lastInteraction.setValue(Date.now());
             
             for (var player of players) {
-                self.get_child().coverart = Utils.exec('/bin/python /home/n3rdium/.dotfiles/.config/ags/force_square.py ' + player.track_cover_url);
+                self.get_child().coverart = Utils.exec('/bin/python /home/n3rdium/.config/ags/force_square.py ' + player.track_cover_url);
                 self.get_child().title = limitString(player.track_title);
+            }
+            if(players.length == 0) {
+                self.get_child().coverart = '/home/n3rdium/.config/ags/Media/icons/default.svg'
+                self.get_child().title = 'Nothing'
             }
         });
 
         hyprland.active.connect('changed', async () => {
             revealMedia.setValue(false);
         });
+
+        setInterval(() => {
+            if(mpris.players.length == 0) {
+                self.get_child().coverart = '/home/n3rdium/.config/ags/Media/icons/default.svg'
+                self.get_child().title = 'Nothing'
+            }
+        }, 100)
     }
 })
 
