@@ -54,6 +54,7 @@ const StatusLayout = () => Widget.CenterBox({
 })
 
 // TODO: Go to workspace on mouse click
+// TODO: Bugfix- icon bg disappears on click
 const WorkspacesLayout = () => Widget.Box({
     vertical: false,
     homogeneous: true,
