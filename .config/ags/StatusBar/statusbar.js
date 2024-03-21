@@ -263,7 +263,7 @@ const SystemMonitor = () => Widget.Box({
 /** @param {import('types/service/systemtray').TrayItem} item */
 const SysTrayItem = item => Widget.Button({
     child: Widget.Icon({
-        css: 'font-size: 24px; background: white;',
+        css: 'font-size: 24px; margin-left: 6px; margin-right: 6px;',
     }).bind('icon', item, 'icon'),
     tooltipMarkup: item.bind('tooltip_markup'),
     onPrimaryClick: (_, event) => item.activate(event),
