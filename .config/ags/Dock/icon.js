@@ -22,14 +22,14 @@ class AppIcon extends Gtk.Box {
             transition:'slide_left',
             child: Widget.Icon({
                 icon: this.icon,
-                css: 'font-size: 48px; padding: 8px;'
+                css: 'font-size: 48px; padding: 8px; min-width: 48px; min-height: 48px;'
             }),
             setup: async self => {
                 await delay(10)
                 self.revealChild = true
             }
         })
-        this.add(this.wrapper)
+        this.add(this.wrapper);
     }
 }
 

@@ -31,6 +31,7 @@ class Player extends Gtk.Box {
             css: 'font-size: 16px; padding: 4px; color: #ffffff;'
         })
 
+        const previousUnmutedVolume = Variable(0)
         this.volumeWidget = Widget.CircularProgress({
             css: 'font-size: 2px;'
                 + 'background-color: transparent;'
@@ -41,29 +42,68 @@ class Player extends Gtk.Box {
             inverted: false,
             startAt: 0.75,
             value: audio['speaker'].bind('volume'),
-            child: Widget.Icon({
+            child: Widget.Button({
+                child: Widget.Icon({
                 css: 'font-size: 16px; color: white;'
-            }).hook(audio.speaker, self => {
-                const vol = audio.speaker.volume * 100;
-                const icon = [
-                    [101, 'overamplified'],
-                    [67, 'high'],
-                    [34, 'medium'],
-                    [1, 'low'],
-                    [0, 'muted'],
-                ].find(([threshold]) => threshold <= vol)?.[1];
-        
-                self.icon = `audio-volume-${icon}-symbolic`;
-                self.tooltip_text = `Volume ${Math.floor(vol)}%`;
-            }),
+                }).hook(audio.speaker, self => {
+                    const vol = audio.speaker.volume * 100;
+                    const icon = [
+                        [101, 'overamplified'],
+                        [67, 'high'],
+                        [34, 'medium'],
+                        [1, 'low'],
+                        [0, 'muted'],
+                    ].find(([threshold]) => threshold <= vol)?.[1];
+
+                    if(vol != 0) {
+                        previousUnmutedVolume.setValue(vol)
+                    }
+            
+                    self.icon = `audio-volume-${icon}-symbolic`;
+                    self.tooltip_text = `Volume ${Math.floor(vol)}%`;
+                }),
+                on_clicked: async self => {
+                    let icon = self.get_child()
+                    icon.css = 'font-size: 16px; min-width: 16px; min-height: 24px; animation: shrink-once16 0.256s ease-in-out;';
+                    await delay(256)
+                    icon.css = 'font-size: 16px; min-width: 16px; min-height: 24px;';
+
+                    let vol = audio.speaker.volume * 100;
+                    if(vol != 0) {
+                        audio.speaker.volume = 0
+                    } else {
+                        audio.speaker.volume = previousUnmutedVolume.getValue() / 100
+                    }
+                },
+                setup: self => {
+                    Utils.monitorFile('/home/n3rdium/.config/ags/mute_key', async () => {
+                        let icon = self.get_child()
+                        icon.css = 'font-size: 16px; min-width: 16px; min-height: 24px; animation: shrink-once16 0.256s ease-in-out;';
+                        await delay(256)
+                        icon.css = 'font-size: 16px; min-width: 16px; min-height: 24px;';
+
+                        let vol = audio.speaker.volume * 100;
+                        if(vol != 0) {
+                            audio.speaker.volume = 0
+                        } else {
+                            audio.speaker.volume = previousUnmutedVolume.getValue() / 100
+                        }
+                    })
+                }
+            })
         })
 
         this.pausePlay = Widget.Button({
             child: Widget.Icon({
-                css: 'font-size: 24px;',
+                css: 'font-size: 24px; min-width: 24px; min-height: 24px;',
                 icon: '/home/n3rdium/.config/ags/Media/icons/play.svg',
                 setup: self => {
-                    mpris.connect('changed', () => {
+                    mpris.connect('changed', async () => {
+                        let icon = self
+                        icon.css = 'font-size: 24px; padding-left: 2px; padding-right: 2px; min-width: 24px; min-height: 24px; animation: shrink-once 0.256s ease-in-out;';
+                        await delay(256)
+                        icon.css = 'font-size: 24px; padding-left: 2px; padding-right: 2px; min-width: 24px; min-height: 24px;';
+
                         let status = mpris.players[this.pidx.getValue()].play_back_status
                         if(status == "Playing") {
                             self.icon = '/home/n3rdium/.config/ags/Media/icons/play.svg'
@@ -75,10 +115,14 @@ class Player extends Gtk.Box {
                     })
                 }
             }),
-            onClicked: () => {
+            onClicked: async self => {
                 if(mpris.players[this.pidx.getValue()].can_play) {
                     mpris.players[this.pidx.getValue()].playPause()
                 }
+                let icon = self.get_child()
+                icon.css = 'font-size: 24px; padding-left: 2px; padding-right: 2px; min-width: 24px; min-height: 24px; animation: shrink-once 0.256s ease-in-out;';
+                await delay(256)
+                icon.css = 'font-size: 24px; padding-left: 2px; padding-right: 2px; min-width: 24px; min-height: 24px;';
             }
         })
         
@@ -87,10 +131,14 @@ class Player extends Gtk.Box {
                 css: 'font-size: 24px;',
                 icon: '/home/n3rdium/.config/ags/Media/icons/previous.svg'
             }),
-            onClicked: () => {
+            onClicked: async self => {
                 if(mpris.players[this.pidx.getValue()].can_go_next) {
                     mpris.players[this.pidx.getValue()].next()
                 }
+                let icon = self.get_child()
+                icon.css = 'font-size: 24px; padding-left: 2px; padding-right: 2px; min-width: 24px; min-height: 24px; animation: shrink-once 0.256s ease-in-out;';
+                await delay(256)
+                icon.css = 'font-size: 24px; padding-left: 2px; padding-right: 2px; min-width: 24px; min-height: 24px;';
             }
         })
         this.next = Widget.Button({
@@ -98,10 +146,14 @@ class Player extends Gtk.Box {
                 css: 'font-size: 24px;',
                 icon: '/home/n3rdium/.config/ags/Media/icons/next.svg'
             }),
-            onClicked: () => {
+            onClicked: async self => {
                 if(mpris.players[this.pidx.getValue()].can_go_prev) {
                     mpris.players[this.pidx.getValue()].previous()
                 }
+                let icon = self.get_child()
+                icon.css = 'font-size: 24px; padding-left: 2px; padding-right: 2px; min-width: 24px; min-height: 24px; animation: shrink-once 0.256s ease-in-out;';
+                await delay(256)
+                icon.css = 'font-size: 24px; padding-left: 2px; padding-right: 2px; min-width: 24px; min-height: 24px;';
             }
         })
         this.playerSwitch = Widget.Button({
@@ -109,12 +161,16 @@ class Player extends Gtk.Box {
                 css: 'font-size: 24px;',
                 icon: '/home/n3rdium/.config/ags/Media/icons/disc.svg'
             }),
-            onClicked: () => {
+            onClicked: async self => {
                 if(mpris.players[this.pidx.getValue() + 1]) {
                     this.pidx.setValue(this.pidx.getValue() + 1)
                 } else {
                     this.pidx.setValue(0)
                 }
+                let icon = self.get_child()
+                icon.css = 'font-size: 24px; padding-left: 2px; padding-right: 2px; min-width: 24px; min-height: 24px; animation: shrink-once 0.256s ease-in-out;';
+                await delay(256)
+                icon.css = 'font-size: 24px; padding-left: 2px; padding-right: 2px; min-width: 24px; min-height: 24px;';
             }
         })
 

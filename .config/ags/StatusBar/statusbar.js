@@ -62,77 +62,107 @@ const WorkspacesLayout = () => Widget.Box({
         Widget.Button({
             child: Widget.Icon({
                 icon: '/home/n3rdium/.config/ags/StatusBar/icons/code.svg',
-                css: 'font-size: 24px; padding-left: 2px; margin-right: 2px;',
+                css: 'font-size: 24px; padding-left: 2px; padding-right: 2px;',
                 setup: self => {
                     hyprland.active.workspace.connect('changed', () => {
                         if(hyprland.active.workspace.id == 1) {
-                            self.css = 'font-size: 24px; padding-left: 2px; margin-right: 2px; background: rgba(169, 169, 169, 0.95); border-radius: 6px;';
+                            self.css = 'font-size: 24px; padding-left: 2px; padding-right: 2px; background: rgba(169, 169, 169, 0.95); border-radius: 6px;';
                         } else {
-                            self.css = 'font-size: 24px; padding-left: 2px; margin-right: 2px;';
+                            self.css = 'font-size: 24px; padding-left: 2px; padding-right: 2px;';
                         }
                     })
                 }
-            })
+            }),
+            on_clicked: async self => {
+                let icon = self.get_child()
+                icon.css = 'font-size: 24px; padding-left: 2px; padding-right: 2px; min-width: 24px; min-height: 24px; animation: shrink-once 0.256s ease-in-out;';
+                await delay(256)
+                icon.css = 'font-size: 24px; padding-left: 2px; padding-right: 2px; min-width: 24px; min-height: 24px;';
+            }
         }),
         Widget.Button({
             child: Widget.Icon({
                 icon: '/home/n3rdium/.config/ags/StatusBar/icons/terminal.svg',
-                css: 'font-size: 32px; padding-left: 2px; margin-right: 2px;',
+                css: 'font-size: 32px; padding-left: 2px; padding-right: 2px;',
                 setup: self => {
                     hyprland.active.workspace.connect('changed', () => {
                         if(hyprland.active.workspace.id == 2) {
-                            self.css = 'font-size: 24px; padding-left: 2px; margin-right: 2px; background: rgba(169, 169, 169, 0.95); border-radius: 6px;';
+                            self.css = 'font-size: 24px; padding-left: 2px; padding-right: 2px; background: rgba(169, 169, 169, 0.95); border-radius: 6px;';
                         } else {
-                            self.css = 'font-size: 24px; padding-left: 2px; margin-right: 2px;';
+                            self.css = 'font-size: 24px; padding-left: 2px; padding-right: 2px;';
                         }
                     })
                 }
-            })
+            }),
+            on_clicked: async self => {
+                let icon = self.get_child()
+                icon.css = 'font-size: 32px; padding-left: 2px; padding-right: 2px; min-width: 32px; min-height: 32px; animation: shrink-once32 0.256s ease-in-out;';
+                await delay(256)
+                icon.css = 'font-size: 32px; padding-left: 2px; padding-right: 2px; min-width: 32px; min-height: 32px;';
+            }
         }),
         Widget.Button({
             child: Widget.Icon({
                 icon: '/home/n3rdium/.config/ags/StatusBar/icons/web.svg',
-                css: 'font-size: 24px; padding-left: 2px; margin-right: 2px;',
+                css: 'font-size: 24px; padding-left: 2px; padding-right: 2px;',
                 setup: self => {
                     hyprland.active.workspace.connect('changed', () => {
                         if(hyprland.active.workspace.id == 3) {
-                            self.css = 'font-size: 24px; padding-left: 2px; margin-right: 2px; background: rgba(169, 169, 169, 0.95); border-radius: 6px;';
+                            self.css = 'font-size: 24px; padding-left: 2px; padding-right: 2px; background: rgba(169, 169, 169, 0.95); border-radius: 6px;';
                         } else {
-                            self.css = 'font-size: 24px; padding-left: 2px; margin-right: 2px;';
+                            self.css = 'font-size: 24px; padding-left: 2px; padding-right: 2px;';
                         }
                     })
                 }
-            })
+            }),
+            on_clicked: async self => {
+                let icon = self.get_child()
+                icon.css = 'font-size: 24px; padding-left: 2px; padding-right: 2px; min-width: 24px; min-height: 24px; animation: shrink-once 0.256s ease-in-out;';
+                await delay(256)
+                icon.css = 'font-size: 24px; padding-left: 2px; padding-right: 2px; min-width: 24px; min-height: 24px;';
+            }
         }),
         Widget.Button({
             child: Widget.Icon({
                 icon: '/home/n3rdium/.config/ags/StatusBar/icons/files.svg',
-                css: 'font-size: 24px; padding-left: 2px; margin-right: 2px;',
+                css: 'font-size: 24px; padding-left: 2px; padding-right: 2px;',
                 setup: self => {
                     hyprland.active.workspace.connect('changed', () => {
                         if(hyprland.active.workspace.id == 4) {
-                            self.css = 'font-size: 24px; padding-left: 2px; margin-right: 2px; background: rgba(169, 169, 169, 0.95); border-radius: 6px;';
+                            self.css = 'font-size: 24px; padding-left: 2px; padding-right: 2px; background: rgba(169, 169, 169, 0.95); border-radius: 6px;';
                         } else {
-                            self.css = 'font-size: 24px; padding-left: 2px; margin-right: 2px;';
+                            self.css = 'font-size: 24px; padding-left: 2px; padding-right: 2px;';
                         }
                     })
                 }
-            })
+            }),
+            on_clicked: async self => {
+                let icon = self.get_child()
+                icon.css = 'font-size: 24px; padding-left: 2px; padding-right: 2px; min-width: 24px; min-height: 24px; animation: shrink-once 0.256s ease-in-out;';
+                await delay(256)
+                icon.css = 'font-size: 24px; padding-left: 2px; padding-right: 2px; min-width: 24px; min-height: 24px;';
+            }
         }),
         Widget.Button({
             child: Widget.Icon({
                 icon: '/home/n3rdium/.config/ags/StatusBar/icons/chat.svg',
-                css: 'font-size: 24px; padding-left: 2px; margin-right: 2px;',
+                css: 'font-size: 24px; padding-left: 2px; padding-right: 2px;',
                 setup: self => {
                     hyprland.active.workspace.connect('changed', () => {
                         if(hyprland.active.workspace.id == 5) {
-                            self.css = 'font-size: 24px; padding-left: 2px; margin-right: 2px; background: rgba(169, 169, 169, 0.95); border-radius: 6px;';
+                            self.css = 'font-size: 24px; padding-left: 2px; padding-right: 2px; background: rgba(169, 169, 169, 0.95); border-radius: 6px;';
                         } else {
-                            self.css = 'font-size: 24px; padding-left: 2px; margin-right: 2px;';
+                            self.css = 'font-size: 24px; padding-left: 2px; padding-right: 2px;';
                         }
                     })
                 }
-            })
+            }),
+            on_clicked: async self => {
+                let icon = self.get_child()
+                icon.css = 'font-size: 24px; padding-left: 2px; padding-right: 2px; min-width: 24px; min-height: 24px; animation: shrink-once 0.256s ease-in-out;';
+                await delay(256)
+                icon.css = 'font-size: 24px; padding-left: 2px; padding-right: 2px; min-width: 24px; min-height: 24px;';
+            }
         }),
         Widget.Button({
             child: Widget.Icon({
@@ -147,7 +177,13 @@ const WorkspacesLayout = () => Widget.Box({
                         }
                     })
                 }
-            })
+            }),
+            on_clicked: async self => {
+                let icon = self.get_child()
+                icon.css = 'font-size: 24px; padding-left: 2px; padding-right: 2px; min-width: 24px; min-height: 24px; animation: shrink-once 0.256s ease-in-out;';
+                await delay(256)
+                icon.css = 'font-size: 24px; padding-left: 2px; padding-right: 2px; min-width: 24px; min-height: 24px;';
+            }
         }),
         Widget.Button({
             child: Widget.Icon({
@@ -162,7 +198,13 @@ const WorkspacesLayout = () => Widget.Box({
                         }
                     })
                 }
-            })
+            }),
+            on_clicked: async self => {
+                let icon = self.get_child()
+                icon.css = 'font-size: 24px; padding-left: 2px; padding-right: 2px; min-width: 24px; min-height: 24px; animation: shrink-once 0.256s ease-in-out;';
+                await delay(256)
+                icon.css = 'font-size: 24px; padding-left: 2px; padding-right: 2px; min-width: 24px; min-height: 24px;';
+            }
         }),
         Widget.Button({
             child: Widget.Icon({
@@ -177,7 +219,13 @@ const WorkspacesLayout = () => Widget.Box({
                         }
                     })
                 }
-            })
+            }),
+            on_clicked: async self => {
+                let icon = self.get_child()
+                icon.css = 'font-size: 24px; padding-left: 2px; padding-right: 2px; min-width: 24px; min-height: 24px; animation: shrink-once 0.256s ease-in-out;';
+                await delay(256)
+                icon.css = 'font-size: 24px; padding-left: 2px; padding-right: 2px; min-width: 24px; min-height: 24px;';
+            }
         }),
         Widget.Button({
             child: Widget.Icon({
@@ -192,7 +240,13 @@ const WorkspacesLayout = () => Widget.Box({
                         }
                     })
                 }
-            })
+            }),
+            on_clicked: async self => {
+                let icon = self.get_child()
+                icon.css = 'font-size: 24px; padding-left: 2px; padding-right: 2px; min-width: 24px; min-height: 24px; animation: shrink-once 0.256s ease-in-out;';
+                await delay(256)
+                icon.css = 'font-size: 24px; padding-left: 2px; padding-right: 2px; min-width: 24px; min-height: 24px;';
+            }
         }),
         Widget.Button({
             child: Widget.Icon({
@@ -207,7 +261,13 @@ const WorkspacesLayout = () => Widget.Box({
                         }
                     })
                 }
-            })
+            }),
+            on_clicked: async self => {
+                let icon = self.get_child()
+                icon.css = 'font-size: 20px; padding-left: 2px; padding-right: 2px;; min-width: 24px; min-height: 24px; animation: shrink-once20 0.256s ease-in-out;';
+                await delay(256)
+                icon.css = 'font-size: 20px; padding-left: 2px; padding-right: 2px; min-width: 24px; min-height: 24px;';
+            }
         })
     ]
 })
@@ -267,7 +327,7 @@ const SystemMonitor = () => Widget.Box({
 const SysTrayItem = item => Widget.Button({
     child: Widget.Revealer({
         child: Widget.Icon({
-            css: 'font-size: 24px; padding-left: 6px; padding-right: 6px;',
+            css: 'font-size: 24px; margin-left: 6px; margin-right: 6px; min-width: 24px; min-height: 24px;',
         }).bind('icon', item, 'icon'),
         reveal_child: false,
         transition: 'slide_right',
@@ -278,7 +338,13 @@ const SysTrayItem = item => Widget.Button({
         }
     }),
     tooltipMarkup: item.bind('tooltip_markup'),
-    onPrimaryClick: (_, event) => item.activate(event),
+    onPrimaryClick: async (_, event) => {
+        item.activate(event)
+        let icon = _.get_child().get_child()
+        icon.css = 'font-size: 24px; margin-left: 6px; margin-right: 6px; min-width: 24px; min-height: 24px; animation: shrink-once 0.256s ease-in-out;';
+        await delay(256)
+        icon.css = 'font-size: 24px; margin-left: 6px; margin-right: 6px; min-width: 24px; min-height: 24px;';
+    },
     onSecondaryClick: (_, event) => item.openMenu(event),
 });
 
@@ -295,9 +361,15 @@ const Rightmost = () => Widget.Box({
     children: [
         Widget.Button({
             child: Widget.Icon({
-                css: 'font-size: 24px; padding-left: 6px; padding-right: 6px;',
+                css: 'font-size: 24px; padding-left: 6px; padding-right: 6px; min-width: 24px; min-height: 24px;',
                 icon: '/home/n3rdium/.config/ags/StatusBar/icons/gear.svg',
             }),
+            on_clicked: async self => {
+                let icon = self.get_child()
+                icon.css = 'font-size: 24px; padding-left: 6px; padding-right: 6px; min-width: 24px; min-height: 24px; animation: shrink-once 0.256s ease-in-out;';
+                await delay(256)
+                icon.css = 'font-size: 24px; padding-left: 6px; padding-right: 6px; min-width: 24px; min-height: 24px;';
+            }
         })
     ]
 })

@@ -11,8 +11,17 @@ windiff.connect('opened', (service, ...args) => {
     if(args[0].pid == -1) { return }
     if(args[0].details.icon) {
         let icons = taskbarIcons.getValue()
-        icons[args[0].pid] = new AppIcon({
-            icon: args[0].details.icon
+        icons[args[0].pid] = Widget.Button({
+            child: new AppIcon({
+                icon: args[0].details.icon
+            }),
+            on_clicked: async self => {
+                let icon = self.get_child().get_children()[0].get_child()
+                lastInteraction.setValue(Date.now());
+                icon.css = 'font-size: 48px; padding: 8px; min-width: 48px; min-height: 48px; animation: shrink-once48 0.256s ease-in-out;';
+                await delay(256)
+                icon.css = 'font-size: 48px; padding: 8px; min-width: 48px; min-height: 48px;';
+            }
         })
         taskbarIcons.setValue(icons)
     }
@@ -22,7 +31,7 @@ windiff.connect('opened', (service, ...args) => {
 windiff.connect('closed', async (service, ...args) => {
     if(args[0].pid == -1) { return }
     let icons = taskbarIcons.getValue()
-    icons[args[0].pid].get_children()[0].revealChild = false
+    icons[args[0].pid].get_child().get_children()[0].revealChild = false
     await delay(1024)
     while(iconsDeleteLock) {await delay(128)}
     iconsDeleteLock.setValue(true)
@@ -45,9 +54,18 @@ const DockLayout = () => Widget.Box({
     homogeneous: false,
     css: 'padding: 8px',
     children: [
-        Widget.Icon({
-            icon: '/home/n3rdium/.config/ags/Dock/icons/grid.svg',
-            css: 'font-size: 48px; padding: 12px; padding-right: 18px;'
+        Widget.Button({
+            child: Widget.Icon({
+                icon: '/home/n3rdium/.config/ags/Dock/icons/grid.svg',
+                css: 'font-size: 48px; padding: 12px; padding-right: 18px; min-width: 48px; min-height: 48px;'
+            }),
+            on_clicked: async self => {
+                let icon = self.get_child()
+                lastInteraction.setValue(Date.now());
+                icon.css = 'font-size: 48px; padding: 12px; padding-right: 18px; min-width: 48px; min-height: 48px; animation: shrink-once48 0.256s ease-in-out;';
+                await delay(256)
+                icon.css = 'font-size: 48px; padding: 12px; padding-right: 18px; min-width: 48px; min-height: 48px;';
+            }
         }),
         Widget.Revealer({
             child: Widget.Separator({
@@ -69,9 +87,18 @@ const DockLayout = () => Widget.Box({
         }),
         Taskbar(),
         Widget.Revealer({
-            child: Widget.Icon({
-                icon: '/home/n3rdium/.config/ags/Dock/icons/launcher.svg',
-                css: 'font-size: 48px; padding-right: 16px;'
+            child: Widget.Button({
+                child: Widget.Icon({
+                    icon: '/home/n3rdium/.config/ags/Dock/icons/launcher.svg',
+                    css: 'font-size: 48px; padding: 12px; padding-right: 16px; min-width: 48px; min-height: 48px;'
+                }),
+                on_clicked: async self => {
+                    let icon = self.get_child()
+                    lastInteraction.setValue(Date.now());
+                    icon.css = 'font-size: 48px; padding: 12px; padding-right: 16px; min-width: 48px; min-height: 48px; animation: shrink-once48 0.256s ease-in-out;';
+                    await delay(256)
+                    icon.css = 'font-size: 48px; padding: 12px; padding-right: 16px; min-width: 48px; min-height: 48px;';
+                }
             }),
             transitionDuration: 500,
             transition: 'slide_right',

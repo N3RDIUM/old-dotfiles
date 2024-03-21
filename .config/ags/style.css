@@ -5,3 +5,28 @@ window {
     border: solid 2px rgba(160, 160, 160, 0.95);;
     color: white;
 }
+@keyframes shrink-once {
+    0% {font-size: 24px;}
+    50% {font-size: 20px;}
+    100% {font-size: 24px;}
+}
+@keyframes shrink-once32 {
+    0% {font-size: 32px;}
+    50% {font-size: 28px;}
+    100% {font-size: 32px;}
+}
+@keyframes shrink-once20 {
+    0% {font-size: 20px;}
+    50% {font-size: 16px;}
+    100% {font-size: 20px;}
+}
+@keyframes shrink-once48 {
+    0% {font-size: 48px;}
+    50% {font-size: 44px;}
+    100% {font-size: 48px;}
+}
+@keyframes shrink-once16 {
+    0% {font-size: 16px;}
+    50% {font-size: 12px;}
+    100% {font-size: 16px;}
+}
