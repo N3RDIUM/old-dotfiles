@@ -1,4 +1,7 @@
 // @ts-nocheck
+import delay from '../delay.js';
+
+// @ts-nocheck
 const hyprland = await Service.import('hyprland')
 const systemtray = await Service.import('systemtray')
 
@@ -134,13 +137,13 @@ const WorkspacesLayout = () => Widget.Box({
         Widget.Button({
             child: Widget.Icon({
                 icon: '/home/n3rdium/.config/ags/StatusBar/icons/music.svg',
-                css: 'font-size: 24px; margin-left: 2px; margin-right: 2px;',
+                css: 'font-size: 24px; margin-left: 4px; margin-right: 4px;',
                 setup: self => {
                     hyprland.active.workspace.connect('changed', () => {
                         if(hyprland.active.workspace.id == 6) {
-                            self.css = 'font-size: 20px; margin-left: 2px; margin-right: 2px; background: rgba(169, 169, 169, 0.95); border-radius: 6px;';
+                            self.css = 'font-size: 20px; margin-left: 4px; margin-right: 4px; background: rgba(169, 169, 169, 0.95); border-radius: 6px;';
                         } else {
-                            self.css = 'font-size: 20px; margin-left: 2px; margin-right: 2px;';
+                            self.css = 'font-size: 20px; margin-left: 4px; margin-right: 4px;';
                         }
                     })
                 }
@@ -149,13 +152,13 @@ const WorkspacesLayout = () => Widget.Box({
         Widget.Button({
             child: Widget.Icon({
                 icon: '/home/n3rdium/.config/ags/StatusBar/icons/astro.svg',
-                css: 'font-size: 24px; margin-left: 2px; margin-right: 2px;',
+                css: 'font-size: 24px; margin-left: 4px; margin-right: 4px;',
                 setup: self => {
                     hyprland.active.workspace.connect('changed', () => {
                         if(hyprland.active.workspace.id == 7) {
-                            self.css = 'font-size: 24px; margin-left: 2px; margin-right: 2px; background: rgba(169, 169, 169, 0.95); border-radius: 6px;';
+                            self.css = 'font-size: 24px; margin-left: 4px; margin-right: 4px; background: rgba(169, 169, 169, 0.95); border-radius: 6px;';
                         } else {
-                            self.css = 'font-size: 24px; margin-left: 2px; margin-right: 2px;';
+                            self.css = 'font-size: 24px; margin-left: 4px; margin-right: 4px;';
                         }
                     })
                 }
@@ -164,13 +167,13 @@ const WorkspacesLayout = () => Widget.Box({
         Widget.Button({
             child: Widget.Icon({
                 icon: '/home/n3rdium/.config/ags/StatusBar/icons/notes.svg',
-                css: 'font-size: 24px; margin-left: 2px; margin-right: 2px;',
+                css: 'font-size: 24px; margin-left: 4px; margin-right: 4px;',
                 setup: self => {
                     hyprland.active.workspace.connect('changed', () => {
                         if(hyprland.active.workspace.id == 8) {
-                            self.css = 'font-size: 20px; margin-left: 2px; margin-right: 2px; background: rgba(169, 169, 169, 0.95); border-radius: 6px;';
+                            self.css = 'font-size: 20px; margin-left: 4px; margin-right: 4px; background: rgba(169, 169, 169, 0.95); border-radius: 6px;';
                         } else {
-                            self.css = 'font-size: 20px; margin-left: 2px; margin-right: 2px;';
+                            self.css = 'font-size: 20px; margin-left: 4px; margin-right: 4px;';
                         }
                     })
                 }
@@ -179,13 +182,13 @@ const WorkspacesLayout = () => Widget.Box({
         Widget.Button({
             child: Widget.Icon({
                 icon: '/home/n3rdium/.config/ags/StatusBar/icons/other.svg',
-                css: 'font-size: 24px; margin-left: 2px; margin-right: 2px;',
+                css: 'font-size: 24px; margin-left: 4px; margin-right: 4px;',
                 setup: self => {
                     hyprland.active.workspace.connect('changed', () => {
                         if(hyprland.active.workspace.id == 9) {
-                            self.css = 'font-size: 24px; margin-left: 2px; margin-right: 2px; background: rgba(169, 169, 169, 0.95); border-radius: 6px;';
+                            self.css = 'font-size: 24px; margin-left: 4px; margin-right: 4px; background: rgba(169, 169, 169, 0.95); border-radius: 6px;';
                         } else {
-                            self.css = 'font-size: 24px; margin-left: 2px; margin-right: 2px;';
+                            self.css = 'font-size: 24px; margin-left: 4px; margin-right: 4px;';
                         }
                     })
                 }
@@ -194,13 +197,13 @@ const WorkspacesLayout = () => Widget.Box({
         Widget.Button({
             child: Widget.Icon({
                 icon: '/home/n3rdium/.config/ags/StatusBar/icons/dashboard.svg',
-                css: 'font-size: 20px; margin-left: 2px; margin-right: 2px;',
+                css: 'font-size: 20px; margin-left: 4px; margin-right: 4px;',
                 setup: self => {
                     hyprland.active.workspace.connect('changed', () => {
                         if(hyprland.active.workspace.id == 10) {
-                            self.css = 'font-size: 20px; margin-left: 2px; margin-right: 2px; background: rgba(169, 169, 169, 0.95); border-radius: 6px;';
+                            self.css = 'font-size: 20px; margin-left: 4px; margin-right: 4px; background: rgba(169, 169, 169, 0.95); border-radius: 6px;';
                         } else {
-                            self.css = 'font-size: 20px; margin-left: 2px; margin-right: 2px;';
+                            self.css = 'font-size: 20px; margin-left: 4px; margin-right: 4px;';
                         }
                     })
                 }
@@ -262,9 +265,18 @@ const SystemMonitor = () => Widget.Box({
 
 /** @param {import('types/service/systemtray').TrayItem} item */
 const SysTrayItem = item => Widget.Button({
-    child: Widget.Icon({
-        css: 'font-size: 24px; margin-left: 6px; margin-right: 6px;',
-    }).bind('icon', item, 'icon'),
+    child: Widget.Revealer({
+        child: Widget.Icon({
+            css: 'font-size: 24px; padding-left: 6px; padding-right: 6px;',
+        }).bind('icon', item, 'icon'),
+        reveal_child: false,
+        transition: 'slide_right',
+        transition_duration: 500,
+        setup: async self => {
+            await delay(100)
+            self.reveal_child = true;
+        }
+    }),
     tooltipMarkup: item.bind('tooltip_markup'),
     onPrimaryClick: (_, event) => item.activate(event),
     onSecondaryClick: (_, event) => item.openMenu(event),
@@ -273,6 +285,21 @@ const SysTrayItem = item => Widget.Button({
 const SystemTray = () => Widget.Box({
     css: 'margin-left: 6px; margin-right: 6px;' + layoutCSS,
     children: systemtray.bind('items').as(i => i.map(SysTrayItem))
+})
+
+// TODO: Figure out a better name :)
+const Rightmost = () => Widget.Box({
+    vertical: false,
+    homogeneous: false,
+    css: 'margin-left: 6px; margin-right: 6px;' + layoutCSS,
+    children: [
+        Widget.Button({
+            child: Widget.Icon({
+                css: 'font-size: 24px; padding-left: 6px; padding-right: 6px;',
+                icon: '/home/n3rdium/.config/ags/StatusBar/icons/gear.svg',
+            }),
+        })
+    ]
 })
 
 const LeftLayout = () => Widget.CenterBox({
@@ -288,7 +315,7 @@ const RightLayout = () => Widget.CenterBox({
     homogeneous: false,
     start_widget: Widget.Box({ hexpand: true }),
     center_widget: SystemTray(),
-    end_widget: Widget.Box({ css: 'min-width: 40px;' + layoutCSS })
+    end_widget: Rightmost()
 })
 
 const Layout = () => Widget.CenterBox({
