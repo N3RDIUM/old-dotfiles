@@ -84,7 +84,7 @@ const WorkspacesLayout = () => Widget.Box({
         Widget.Button({
             child: Widget.Icon({
                 icon: '/home/n3rdium/.config/ags/StatusBar/icons/terminal.svg',
-                css: 'font-size: 32px; padding-left: 2px; padding-right: 2px;',
+                css: 'font-size: 24px; padding-left: 2px; padding-right: 2px;',
                 setup: self => {
                     hyprland.active.workspace.connect('changed', () => {
                         if(hyprland.active.workspace.id == 2) {
@@ -97,9 +97,9 @@ const WorkspacesLayout = () => Widget.Box({
             }),
             on_clicked: async self => {
                 let icon = self.get_child()
-                icon.css = 'font-size: 32px; padding-left: 2px; padding-right: 2px; min-width: 32px; min-height: 32px; animation: shrink-once32 0.256s ease-in-out;';
+                icon.css = 'font-size: 24px; padding-left: 2px; padding-right: 2px; min-width: 32px; min-height: 32px; animation: shrink-once 0.256s ease-in-out;';
                 await delay(256)
-                icon.css = 'font-size: 32px; padding-left: 2px; padding-right: 2px; min-width: 32px; min-height: 32px;';
+                icon.css = 'font-size: 24px; padding-left: 2px; padding-right: 2px; min-width: 32px; min-height: 32px;';
             }
         }),
         Widget.Button({
