@@ -12,7 +12,7 @@ These are my legendary WIP dotfiles (they will prlly be maintained forever!).
 They're managed with GNU's `stow` utility.
 
 # Screenshots
-![screenshot1](./Screenshots/First.png)
+![screenshot1](./Screenshots/Second.png)
 <p align=center>Please note that this config is not fully completed and that I didn't have time for a proper screenshot.</p>
 
 # Features

@@ -1,5 +1,6 @@
 // @ts-nocheck
 const hyprland = await Service.import('hyprland')
+const systemtray = await Service.import('systemtray')
 
 function limitString(str, limit=42) {
     if (str.length > limit) {
@@ -259,6 +260,21 @@ const SystemMonitor = () => Widget.Box({
     ]
 })
 
+/** @param {import('types/service/systemtray').TrayItem} item */
+const SysTrayItem = item => Widget.Button({
+    child: Widget.Icon({
+        css: 'font-size: 24px; background: white;',
+    }).bind('icon', item, 'icon'),
+    tooltipMarkup: item.bind('tooltip_markup'),
+    onPrimaryClick: (_, event) => item.activate(event),
+    onSecondaryClick: (_, event) => item.openMenu(event),
+});
+
+const SystemTray = () => Widget.Box({
+    css: 'margin-left: 6px; margin-right: 6px;' + layoutCSS,
+    children: systemtray.bind('items').as(i => i.map(SysTrayItem))
+})
+
 const LeftLayout = () => Widget.CenterBox({
     vertical: false,
     homogeneous: false,
@@ -271,6 +287,8 @@ const RightLayout = () => Widget.CenterBox({
     vertical: false,
     homogeneous: false,
     start_widget: Widget.Box({ hexpand: true }),
+    center_widget: SystemTray(),
+    end_widget: Widget.Box({ css: 'min-width: 40px;' + layoutCSS })
 })
 
 const Layout = () => Widget.CenterBox({
