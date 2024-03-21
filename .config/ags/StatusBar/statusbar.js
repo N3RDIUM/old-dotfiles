@@ -360,6 +360,7 @@ const Rightmost = () => Widget.Box({
     homogeneous: false,
     css: 'margin-left: 6px; margin-right: 6px;' + layoutCSS,
     children: [
+        Widget.Box({ hexpand: true }),
         Widget.Button({
             child: Widget.Icon({
                 css: 'font-size: 24px; padding-left: 6px; padding-right: 6px; min-width: 24px; min-height: 24px;',
