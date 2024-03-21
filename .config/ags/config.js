@@ -3,8 +3,6 @@ const hyprland = await Service.import('hyprland');
 import { changeWallpaper } from "./Wallpaper/wallpaper_changer.js";
 import Dock from "./Dock/dock.js";
 import Media from "./Media/media.js";
-import Monitor from './SysMonitor/system_monitor.js'
-import Workspaces from "./Workspaces/workspaces.js";
 import StatusBar from "./StatusBar/statusbar.js";
 import delay from "./delay.js";
 
@@ -20,8 +18,6 @@ export default {
     windows: [
         Dock(),
         Media(),
-        // Monitor(), // To improve
-        Workspaces(),
         StatusBar()
     ],
 }

@@ -68,7 +68,7 @@ const Revealer = () => Widget.Revealer({
 const Media = () => Widget.Window({
     name: `Media`,
     anchor: ['top', 'left'],
-    margins: [72, 8],
+    margins: [0, 0],
     css: 'padding: 1px',
     child: Widget.Box({
         css: 'padding: 1px;',
