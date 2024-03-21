@@ -20,7 +20,7 @@ export default {
     windows: [
         Dock(),
         Media(),
-        Monitor(), // To improve
+        // Monitor(), // To improve
         Workspaces(),
         StatusBar()
     ],

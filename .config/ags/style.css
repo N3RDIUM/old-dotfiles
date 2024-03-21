@@ -1,6 +1,7 @@
 * { all: unset }
 window {
     border-radius: 6px;
-    background-color: rgba(69, 69, 69, 0.64);
+    background-color: rgba(69, 69, 69, 0.32);
+    border: solid 2px rgba(160, 160, 160, 0.8);;
     color: white;
 }

@@ -3,6 +3,7 @@ const hyprland = await Service.import('hyprland');
 
 const divide = ([total, free]) => free / total
 
+// TODO: Move sysmon to top-right. This is the Copilot space.
 const cpu = Variable(0, {
     poll: [1000, 'top -b -n 1', out => divide([100, out.split('\n')
         .find(line => line.includes('Cpu(s)'))
