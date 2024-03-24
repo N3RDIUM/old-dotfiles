@@ -18,12 +18,8 @@
     "dock": {
         "icon-aliases": {
             "Discord": "discord",
-            "obsidian": "obsidian"
+            "obsidian": "obsidian",
+            "nuclear": "/home/n3rdium/.config/ags/Dock/icons/nuclear.png"
         }
-    },
-    "workspaces": {
-        "workspace-icons": [
-            
-        ]
     }
 }
