@@ -137,7 +137,7 @@ const Revealer = () => Widget.Revealer({
             if(mouseIn.getValue()) {
                 lastInteraction.setValue(Date.now());
             }
-            if (Date.now() - lastInteraction.getValue() > 1024) {
+            if (Date.now() - lastInteraction.getValue() > 512) {
                 revealDock.setValue(false);
             }
         }, 1024);
