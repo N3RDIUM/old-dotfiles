@@ -1,5 +1,6 @@
 // @ts-nocheck
 import delay from '../delay.js';
+import WebKit2 from "gi://WebKit2?version=4.1"
 
 // @ts-nocheck
 const hyprland = await Service.import('hyprland')
@@ -354,13 +355,18 @@ const SystemTray = () => Widget.Box({
     children: systemtray.bind('items').as(i => i.map(SysTrayItem))
 })
 
+
+const WebView = Widget.subclass(WebKit2.WebView, "AgsWebView");
+const view = WebView({})
+view.load_uri("https://github.com") //load a website
+
 // TODO: Figure out a better name :)
 const Rightmost = () => Widget.Box({
     vertical: false,
     homogeneous: false,
     css: 'margin-left: 6px; margin-right: 6px;' + layoutCSS,
     children: [
-        Widget.Box({ hexpand: true }),
+        view,
         Widget.Button({
             child: Widget.Icon({
                 css: 'font-size: 24px; padding-left: 6px; padding-right: 6px; min-width: 24px; min-height: 24px;',
