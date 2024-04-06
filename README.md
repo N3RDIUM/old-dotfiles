@@ -31,6 +31,9 @@ This rice is going to undergo a huge remake soon, now that I've got the hang of 
 - [ ] Switch to neovim (also a personal thing)
 - [ ] More coming!
 
+# Known issues
+- [ ] This is made specifically for a 1920x1080 monitor, manual modifications are required for other monitor sizes
+
 # Installation
 
 Installation of these dotfiles should be pretty straight forward. First you need to install the... (move your eyes to the next sub-heading!)
