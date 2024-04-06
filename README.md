@@ -72,5 +72,8 @@ obsidian
 ## Step Three
 Work in progress!
 
+# Uninstallation
+Work in progress!
+
 # Keybinds
 Work in progress!
