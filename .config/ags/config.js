@@ -1,5 +1,7 @@
 import Bar from "./bar/bar.js";
 import RightPane from "./rightpane/rightpane.js";
+import LeftPane from "./leftpane/leftpane.js";
+import BottomPane from "./bottompane/bottompane.js";
 
 App.config({
     style: './style.css',
@@ -8,6 +10,8 @@ App.config({
 export default {
     windows: [
         Bar(),
-        // RightPane() // TODO: Revealer for the right pane
+        // RightPane(), // TODO: Revealers for these panes
+        // LeftPane(),
+        // BottomPane(),
     ],
 }
