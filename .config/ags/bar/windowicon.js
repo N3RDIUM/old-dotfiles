@@ -6,7 +6,9 @@ const icons = {
     'Code': 'visual-studio-code',
     'firefoxdeveloperedition': 'firefox-developer-edition',
     'thunar': 'org.xfce.thunar',
-    'discord': 'discord'
+    'discord': 'discord',
+    'obsidian': 'obsidian',
+    'Chromium': 'chromium'
 }
 
 const TitleBar = () => Widget.Revealer({
