@@ -2,7 +2,7 @@ import TitleBar from "./titlebar.js";
 import WindowIcon from "./windowicon.js";
 import Workspaces from "./workspaces.js";
 import Windows from "./windows.js";
-import Currents from "./currents.js";
+import Time from "./time.js";
 import Me from "./me.js";
 import SystemMonitor from "./system-monitor.js";
 
@@ -34,7 +34,7 @@ const Bar = () => Widget.Window({
                 Widget.Box({ hexpand: true }),
                 Me(),
                 SystemMonitor(),
-                Currents()
+                Time()
             ]
         })
     }),
