@@ -1,5 +1,10 @@
 import TitleBar from "./titlebar.js";
 import WindowIcon from "./windowicon.js";
+import Workspaces from "./workspaces.js";
+import Windows from "./windows.js";
+import Currents from "./currents.js";
+import Me from "./me.js";
+import SystemMonitor from "./system-monitor.js";
 
 const Bar = () => Widget.Window({
     name: `Bar`,
@@ -11,24 +16,27 @@ const Bar = () => Widget.Window({
         css: 'background: transparent;',
         vertical: false,
         homogeneous: false,
-        // start_widget: Widget.Box({
-        //     children: [
-        //         TitleBar(),
-        //         Widget.Box({ hexpand: true })
-        //     ]
-        // }),
+        start_widget: Widget.Box({
+            children: [
+                Workspaces(),
+                Windows(), // Who's gonna stop me?
+                Widget.Box({ hexpand: true })
+            ]
+        }),
         center_widget: Widget.Box({
             children: [
                 WindowIcon(),
                 TitleBar(),
             ]
         }),
-        // end_widget: Widget.Box({
-        //     children: [
-        //         Widget.Box({ hexpand: true }),
-        //         TitleBar()
-        //     ]
-        // })
+        end_widget: Widget.Box({
+            children: [
+                Widget.Box({ hexpand: true }),
+                Me(),
+                SystemMonitor(),
+                Currents()
+            ]
+        })
     }),
 })
 
