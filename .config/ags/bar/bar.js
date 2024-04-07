@@ -1,4 +1,5 @@
 import TitleBar from "./titlebar.js";
+import WindowIcon from "./windowicon.js";
 
 const Bar = () => Widget.Window({
     name: `Bar`,
@@ -18,6 +19,7 @@ const Bar = () => Widget.Window({
         // }),
         center_widget: Widget.Box({
             children: [
+                WindowIcon(),
                 TitleBar(),
             ]
         }),
