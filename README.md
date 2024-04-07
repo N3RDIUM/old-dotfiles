@@ -47,7 +47,7 @@ kitty
 aylurs-gtk-shell
 sddm
 swww
-ttf-fira-code (My favourite font)
+ttf-fira-code (Recommended font)
 zsh
 hyprshot
 gvfs
