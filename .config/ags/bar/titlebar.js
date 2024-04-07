@@ -15,7 +15,11 @@ const TitleBar = () => Widget.CenterBox({
         css: 'color: white; font-family: FiraCode; font-size: 14px;',
         setup: self => {
             hyprland.active.client.connect('changed', async () => {
-                self.label = limitString(hyprland.active.client.title);
+                if(hyprland.active.client.title != '') {
+                    self.label = limitString(hyprland.active.client.title);
+                } else {
+                    self.label = "[-] Nothing [-]"
+                }
             })
         }
     })
