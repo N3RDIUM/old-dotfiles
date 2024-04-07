@@ -18,7 +18,7 @@ const TitleBar = () => Widget.Revealer({
     child: Widget.CenterBox({
         vertical: false,
         homogeneous: false,
-        css: "background: rgba(64, 64, 64, 0.6); min-height: 40px; min-width: 40px; border-radius: 4px; margin-top: 4px; margin-right: 5px;",
+        css: "background: rgba(64, 64, 64, 0.6); min-height: 40px; min-width: 40px; border-radius: 8px; margin-top: 4px; margin-right: 5px;",
         center_widget: Widget.Revealer({
             transition: 'crossfade',
             transition_duration: 128,
