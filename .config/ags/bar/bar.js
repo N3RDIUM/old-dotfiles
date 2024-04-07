@@ -1,15 +1,32 @@
+import TitleBar from "./titlebar.js";
+
 const Bar = () => Widget.Window({
     name: `Bar`,
     anchor: ['top', 'left', 'right'],
     margins: [0, 8],
     css: 'background: transparent;',
     exclusivity: 'exclusive',
-    child: Widget.Box({
-        css: 'padding: 4px; min-height: 24px; border-radius: 6px; background-color: rgba(255, 255, 255, 1); color: white; margin-top: 8px;',
-        child: Widget.Label({
-            label: 'I am a bar',
-            css: 'color: black;'
-        })
+    child: Widget.CenterBox({
+        css: 'background: transparent;',
+        vertical: false,
+        homogeneous: false,
+        // start_widget: Widget.Box({
+        //     children: [
+        //         TitleBar(),
+        //         Widget.Box({ hexpand: true })
+        //     ]
+        // }),
+        center_widget: Widget.Box({
+            children: [
+                TitleBar(),
+            ]
+        }),
+        // end_widget: Widget.Box({
+        //     children: [
+        //         Widget.Box({ hexpand: true }),
+        //         TitleBar()
+        //     ]
+        // })
     }),
 })
 
