@@ -15,7 +15,7 @@ const profiles = [
         command: 'powerprofilesctl set performance'
     }
 ]
-const profile_map = { // TODO listen with var for powerprofilesctl get and update current if externally changed
+const profile_map = {
     'balanced': 0,
     'power-saver': 1,
     'performance': 2
@@ -46,7 +46,13 @@ const PowerProfiles = () => Widget.Button({
         Utils.exec(profiles[current.getValue()].command)
     },
     setup: self => {
-
+        setInterval(
+            async () => {
+                let profile = await Utils.exec('powerprofilesctl get')
+                current.setValue(profile_map[profile])
+            },
+            100
+        )
     }
 })
 
