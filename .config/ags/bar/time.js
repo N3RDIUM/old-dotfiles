@@ -14,7 +14,7 @@ var time = Variable('', {
 const Time = () => Widget.CenterBox({ // Just the date/time and weather
     vertical: false,
     homogeneous: false,
-    css: "background: rgba(64, 64, 64, 0.6); min-height: 40px; padding-left: 8px; padding-right: 8px; border-radius: 8px; margin-top: 4px;",
+    css: "background: rgba(64, 64, 64, 0.32); min-height: 40px; padding-left: 8px; padding-right: 8px; border-radius: 8px; margin-top: 4px;",
     center_widget: Widget.Box({
         children: [
             Widget.Label({

@@ -9,7 +9,7 @@ function limitString(string) {
 const TitleBar = () => Widget.CenterBox({
     vertical: false,
     homogeneous: false,
-    css: "background: rgba(64, 64, 64, 0.6); min-height: 40px; min-width: 480px; border-radius: 8px; margin-top: 4px;",
+    css: "background: rgba(64, 64, 64, 0.32); min-height: 40px; min-width: 480px; border-radius: 8px; margin-top: 4px;",
     center_widget: Widget.Label({
         label: '',
         css: 'color: white; font-family: FiraCode; font-size: 14px;',

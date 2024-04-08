@@ -5,6 +5,7 @@ import Windows from "./windows.js";
 import Time from "./time.js";
 import Me from "./me.js";
 import SystemMonitor from "./system-monitor.js";
+import PowerProfiles from "./power-profiles.js";
 
 const Bar = () => Widget.Window({
     name: `Bar`,
@@ -33,6 +34,7 @@ const Bar = () => Widget.Window({
             children: [
                 Widget.Box({ hexpand: true }),
                 Me(),
+                PowerProfiles(),
                 SystemMonitor(),
                 Time()
             ]
