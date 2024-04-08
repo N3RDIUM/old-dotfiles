@@ -71,7 +71,7 @@ const SystemMonitor = () => Widget.Box({
             children: [
                 Widget.Icon({
                     icon: '/home/n3rdium/.config/ags/assets/icons/thermal.svg',
-                    css: 'color: white; font-family: FiraCode; font-size: 24px; margin-right: 4px;'
+                    css: 'color: white; font-family: FiraCode; font-size: 24px;'
                 }),
                 Widget.Label({
                     label: temp.bind().as(x => x + "°C"),
