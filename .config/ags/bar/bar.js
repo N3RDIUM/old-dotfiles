@@ -3,7 +3,6 @@ import WindowIcon from "./windowicon.js";
 import Workspaces from "./workspaces.js";
 import Windows from "./windows.js";
 import Time from "./time.js";
-import Me from "./me.js";
 import SystemMonitor from "./system-monitor.js";
 import PowerProfiles from "./power-profiles.js";
 
@@ -33,7 +32,6 @@ const Bar = () => Widget.Window({
         end_widget: Widget.Box({
             children: [
                 Widget.Box({ hexpand: true }),
-                Me(),
                 PowerProfiles(),
                 SystemMonitor(),
                 Time()
