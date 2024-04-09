@@ -23,16 +23,16 @@ const profile_map = {
 const current = Variable(0);
 
 const PowerProfiles = () => Widget.Button({
-    css: "background: rgba(64, 64, 64, 0.32); min-height: 40px; padding-left: 8px; padding-right: 8px; border-radius: 8px; margin-top: 4px; margin-right: 5px;",
+    css: "background: rgba(100, 100, 100, 0.48); min-height: 28px; padding-left: 8px; padding-right: 8px; border-radius: 8px; margin-top: 4px; margin-right: 5px;",
     child: Widget.Box({
         children: [
             Widget.Icon({
                 icon: current.bind().as(x => profiles[x].icon),
-                css: 'color: white; font-family: FiraCode; font-size: 24px; margin-right: 4px;'
+                css: 'color: white; font-family: FiraCode; font-size: 14px; margin-right: 4px;'
             }),
             Widget.Label({
                 label: current.bind().as(x => profiles[x].name),
-                css: 'color: white; font-family: FiraCode; font-size: 14px;'
+                css: 'color: white; font-family: FiraCode; font-size: 12px;'
             })
         ]
     }),

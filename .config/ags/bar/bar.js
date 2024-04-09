@@ -1,10 +1,10 @@
 import TitleBar from "./titlebar.js";
-import WindowIcon from "./windowicon.js";
 import Workspaces from "./workspaces.js";
 import Windows from "./windows.js";
 import Time from "./time.js";
 import SystemMonitor from "./system-monitor.js";
 import PowerProfiles from "./power-profiles.js";
+import Me from './me.js';
 
 const Bar = () => Widget.Window({
     name: `Bar`,
@@ -25,13 +25,13 @@ const Bar = () => Widget.Window({
         }),
         center_widget: Widget.Box({
             children: [
-                WindowIcon(),
                 TitleBar(),
             ]
         }),
         end_widget: Widget.Box({
             children: [
                 Widget.Box({ hexpand: true }),
+                Me(),
                 PowerProfiles(),
                 SystemMonitor(),
                 Time()
