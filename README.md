@@ -55,6 +55,13 @@ dolphin
 wofi (Will be superseded by a native AGS launcher!)
 ```
 
+The following hyprland plugins are required:
+
+```
+hyprland-plugins
+hy3
+```
+
 After you install these, you *might* want to have a look at my... (move your eyes to the next sub-heading!)
 
 ## Applications
