@@ -38,8 +38,8 @@ const vec2 display_resolution = vec2(1980.0, 1280.0);
 vec2 curve(vec2 uv) {
   uv = (uv - 0.5) * 2.0;
   uv *= 1.1;
-  uv.x *= 1.0 + pow((abs(uv.y) / 8.0), 2.0);
-  uv.y *= 1.0 + pow((abs(uv.x) / 8.0), 2.0);
+  uv.x *= 1.0 + pow((abs(uv.y) / 10.0), 2.0);
+  uv.y *= 1.0 + pow((abs(uv.x) / 10.0), 2.0);
   uv = (uv / 2.024) + 0.5;
   uv = uv * 0.92 + 0.04;
   return uv;
@@ -61,7 +61,7 @@ void main() {
   vec3 col = pixColor.rgb;
 
   // Chromatic aberration from CRT ray misalignment
-  float analog_noise = fract(sin(time) * 43758.5453123 * uv.y) * 0.00024;
+  float analog_noise = fract(sin(time) * 43758.5453123 * uv.y) * 0.000064;
   col.r =
       texture2D(tex, vec2(analog_noise + uv.x + 0.0008, uv.y + 0.0)).x + 0.05;
   col.g = texture2D(tex, vec2(analog_noise + uv.x + 0.0008, uv.y + 0.0005)).y +
@@ -77,7 +77,7 @@ void main() {
   /////////////
 
   // Grain
-  float scale = 4.2;
+  float scale = 2.4;
   float amount = 0.12;
   vec2 offset = (rand(uv, time) - 0.9) * 1.8 * uv * scale;
   vec3 noise = texture2D(tex, uv + offset).rgb;
@@ -118,7 +118,7 @@ void main() {
   ///////////////////////////////////////////////////////////////////////////////////////////////
 
   // SCANLINES
-  float scanvar = 0.042;
+  float scanvar = 0.016;
   float scanlines =
       clamp(scanvar + scanvar * sin(display_framerate * 1.95 * mod(-time, 8.0) +
                                     uv.y * display_resolution.y),
@@ -145,7 +145,7 @@ void main() {
     col *= 0.0;
 
   // PHOSPHOR COATING LINES
-  float phosphor = 0.08;
+  float phosphor = 0.042;
   float rPhosphor = clamp(
       phosphor + phosphor * sin((uv.x) * display_resolution.x * 1.333333333),
       0.0, 1.0);
