@@ -77,8 +77,8 @@ void main() {
   /////////////
 
   // Grain
-  float scale = 2.4;
-  float amount = 0.14;
+  float scale = 4.8;
+  float amount = 0.064;
   vec2 offset = (rand(uv, time) - 0.9) * 1.8 * uv * scale;
   vec3 noise = texture2D(tex, uv + offset).rgb;
   col.rgb = mix(col.rgb, noise, amount);
@@ -118,7 +118,7 @@ void main() {
   ///////////////////////////////////////////////////////////////////////////////////////////////
 
   // SCANLINES
-  float scanvar = 0.032;
+  float scanvar = 0.128;
   float scanlines =
       clamp(scanvar + scanvar * sin(display_framerate * 1.95 * mod(-time, 8.0) +
                                     uv.y * display_resolution.y),
