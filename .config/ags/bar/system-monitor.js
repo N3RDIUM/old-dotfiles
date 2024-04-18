@@ -25,7 +25,7 @@ const disc = Variable(0, {
 const SystemMonitor = () => Widget.Box({
     vertical: false,
     homogeneous: false,
-    css: "background: rgba(100, 100, 100, 0.48); min-height: 28px; padding-left: 4px; padding-right: 4px; border-radius: 8px; margin-top: 4px; margin-right: 5px; border: solid 1px rgba(200, 200, 200, 0.42);",
+    css: "background: rgba(100, 100, 100, 0.64); min-height: 28px; padding-left: 4px; padding-right: 4px; border-radius: 8px; margin-top: 4px; margin-right: 5px; border: solid 1px rgba(200, 200, 200, 0.42);",
     children: [
         Widget.Box({
             css: 'margin-right: 4px;',
