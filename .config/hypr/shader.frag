@@ -90,10 +90,10 @@ void main() {
 
   // BLOOM
   const float blur_directions =
-      24.0;                       // default is 12.0 but 24.0+ will look bestest
-  const float blur_quality = 2.4; // default is 3.0  but 4.0+  will look bestest
-  const float blur_size = 12.0;   // radius in pixels
-  const float blur_brightness = 6.4; // radius in pixels
+      8.0;                       // default is 12.0 but 24.0+ will look bestest
+  const float blur_quality = 4.2; // default is 3.0  but 4.0+  will look bestest
+  const float blur_size = 6.9;   // radius in pixels
+  const float blur_brightness = 4.8; // radius in pixels
 
   const vec2 blur_radius = blur_size / (display_resolution.xy * 0.5);
 
