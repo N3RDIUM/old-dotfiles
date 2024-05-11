@@ -38,8 +38,8 @@ const vec2 display_resolution = vec2(1980.0, 1280.0);
 vec2 curve(vec2 uv) {
   uv = (uv - 0.5) * 2.0;
   uv *= 1.1;
-  uv.x *= 1.0 + pow((abs(uv.y) / 10.0), 2.0);
-  uv.y *= 1.0 + pow((abs(uv.x) / 10.0), 2.0);
+  uv.x *= 1.0 + pow((abs(uv.y) / 9.0), 2.0);
+  uv.y *= 1.0 + pow((abs(uv.x) / 9.0), 2.0);
   uv = (uv / 2.024) + 0.5;
   uv = uv * 0.92 + 0.04;
   return uv;
@@ -61,7 +61,7 @@ void main() {
   vec3 col = pixColor.rgb;
 
   // Chromatic aberration from CRT ray misalignment
-  float analog_noise = fract(sin(time) * 43758.5453123 * uv.y) * 0.000064;
+  float analog_noise = fract(sin(time) * 43758.5453123 * uv.y) * 0.000016;
   col.r =
       texture2D(tex, vec2(analog_noise + uv.x + 0.0008, uv.y + 0.0)).x + 0.05;
   col.g = texture2D(tex, vec2(analog_noise + uv.x + 0.0008, uv.y + 0.0005)).y +
@@ -72,28 +72,28 @@ void main() {
   ///////////////////////////////////////////////////////////////////////////////////////////////
 
   // Contrast
-  col = mix(col, col * smoothstep(0.0, 1.0, col), 1.);
-  col = mix(col, col * smoothstep(0.0, 1.0, col), 0.5);
+  col = mix(col, col * smoothstep(0.0, 1.0, col), 1.28);
+  col = mix(col, col * smoothstep(0.0, 1.0, col), 0.1);
   /////////////
 
   // Grain
-  float scale = 4.8;
+  float scale = 2.4;
   float amount = 0.064;
   vec2 offset = (rand(uv, time) - 0.9) * 1.8 * uv * scale;
   vec3 noise = texture2D(tex, uv + offset).rgb;
   col.rgb = mix(col.rgb, noise, amount);
   ////////////////////////////////
-  col *= 12.8;
+  col *= 8.4;
   /////
 
   ///////////////////////////////////////////////////////////////////////////////////////////////
 
   // BLOOM
   const float blur_directions =
-      8.0;                       // default is 12.0 but 24.0+ will look bestest
-  const float blur_quality = 4.2; // default is 3.0  but 4.0+  will look bestest
-  const float blur_size = 6.9;   // radius in pixels
-  const float blur_brightness = 4.8; // radius in pixels
+      12.0;                       // default is 12.0 but 24.0+ will look bestest
+  const float blur_quality = 3.5; // default is 3.0  but 4.0+  will look bestest
+  const float blur_size = 24.0;   // radius in pixels
+  const float blur_brightness = 6.9420; // radius in pixels
 
   const vec2 blur_radius = blur_size / (display_resolution.xy * 0.5);
 
@@ -167,7 +167,7 @@ void main() {
   ///////////////////////////////////////////////////////////////////////////////////////////////
   // VIGNETTE FROM CURVATURE
   const float vignetteStrenght = 200.;
-  const float vignetteExtend = 0.21;
+  const float vignetteExtend = 0.24;
 
   vec2 uv_ = uv * (1.0 - uv.yx);
   // multiply with sth for intensity

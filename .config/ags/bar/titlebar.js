@@ -6,23 +6,24 @@ function limitString(string) {
         string;
 }
 
+const title = Variable('')
 const TitleBar = () => Widget.CenterBox({
     vertical: false,
     homogeneous: false,
-    css: "background: rgba(100, 100, 100, 0.8); min-height: 28px; min-width: 480px; border-radius: 8px; margin-top: 4px; border: solid 1px rgba(200, 200, 200, 0.42);",
+    css: "background: black; min-height: 36px; border-radius: 6px; margin-top: 4px; padding-left: 12px; padding-right: 12px;",
     center_widget: Widget.Label({
-        label: '',
+        label: title.bind(),
         css: 'color: white; font-family: FiraCode; font-size: 12px;',
         setup: self => {
             hyprland.active.client.connect('changed', async () => {
                 if(hyprland.active.client.title != '') {
-                    self.label = limitString(hyprland.active.client.title);
+                    title.setValue(limitString(hyprland.active.client.title));
                 } else {
-                    self.label = "[-] Nothing [-]"
+                    title.setValue("[-] Nothing [-]");
                 }
             })
         }
-    })
+    }),
 })
 
 export default TitleBar;
