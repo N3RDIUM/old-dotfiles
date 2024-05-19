@@ -72,13 +72,13 @@ void main() {
   ///////////////////////////////////////////////////////////////////////////////////////////////
 
   // Contrast
-  col = mix(col, col * smoothstep(0.0, 1.0, col), 1.28);
-  col = mix(col, col * smoothstep(0.0, 1.0, col), 0.1);
+  col = mix(col, col * smoothstep(0.0, 1.0, col), 0.8);
+  col = mix(col, col * smoothstep(0.0, 1.0, col), 0.128);
   /////////////
 
   // Grain
-  float scale = 2.4;
-  float amount = 0.064;
+  float scale = 16.384;
+  float amount = 0.128;
   vec2 offset = (rand(uv, time) - 0.9) * 1.8 * uv * scale;
   vec3 noise = texture2D(tex, uv + offset).rgb;
   col.rgb = mix(col.rgb, noise, amount);
@@ -91,9 +91,9 @@ void main() {
   // BLOOM
   const float blur_directions =
       12.0;                       // default is 12.0 but 24.0+ will look bestest
-  const float blur_quality = 3.5; // default is 3.0  but 4.0+  will look bestest
+  const float blur_quality = 3.0; // default is 3.0  but 4.0+  will look bestest
   const float blur_size = 24.0;   // radius in pixels
-  const float blur_brightness = 6.9420; // radius in pixels
+  const float blur_brightness = 6.9420 / 3.21; // radius in pixels
 
   const vec2 blur_radius = blur_size / (display_resolution.xy * 0.5);
 
@@ -118,7 +118,7 @@ void main() {
   ///////////////////////////////////////////////////////////////////////////////////////////////
 
   // SCANLINES
-  float scanvar = 0.128;
+  float scanvar = 0.2;
   float scanlines =
       clamp(scanvar + scanvar * sin(display_framerate * 1.95 * mod(-time, 8.0) +
                                     uv.y * display_resolution.y),
@@ -183,10 +183,10 @@ void main() {
   // decrease color quality
   // by blending in other colors
   // across the spectrum
-  //pixColor.r = mix(col.r, mix(col.g, col.b, 0.9), 0.042);
-  //pixColor.g = mix(col.g, mix(col.r, col.b, 0.3), 0.042);
-  //pixColor.b = mix(col.b, mix(col.g, col.r, 0.8), 0.042);
-  pixColor.rgb = col; 
+  pixColor.r = mix(col.r, mix(col.g, col.b, 0.9), 0.042);
+  pixColor.g = mix(col.g, mix(col.r, col.b, 0.3), 0.042);
+  pixColor.b = mix(col.b, mix(col.g, col.r, 0.8), 0.042);
+  //pixColor.rgb = col;
 
   pixColor.rb *= vec2(1.042, 0.82); // crt phosphor  tinting
 

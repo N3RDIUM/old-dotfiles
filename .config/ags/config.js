@@ -1,5 +1,4 @@
-import Bar from "./bar/bar.js";
-import Media from "./media/media.js";
+import Dock from "./dock/dock.js";
 
 App.config({
     style: './style.css',
@@ -8,7 +7,6 @@ App.config({
 // TODO make the top bar extra thin
 export default {
     windows: [
-        Bar(),
-        // Media()
+        Dock()
     ],
 }
