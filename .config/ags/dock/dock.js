@@ -20,8 +20,6 @@ function getClientInfo(client) {
             client.class && app.match(cls)
         ) {
             return app
-        } else {
-            console.log(client)
         }
     }
     return null;
@@ -146,6 +144,10 @@ const Dock = () => Widget.Window({
                         }
                     }
                 }, 1024);
+                Utils.monitorFile('/home/n3rdium/.config/ags/super_key', () => {
+                    revealDock.setValue(!revealDock.getValue())
+                    lastInteraction.setValue(Date.now());
+                })
             }
         }),
         css: 'padding: 1px;'
