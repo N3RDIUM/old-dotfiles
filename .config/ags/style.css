@@ -1,1 +1,9 @@
 * { all: unset }
+@keyframes shrink-in {
+    0% {font-size: 56px;}
+    100% {font-size: 50px;}
+}
+@keyframes shrink-out {
+    0% {font-size: 50px;}
+    100% {font-size: 56px;}
+}

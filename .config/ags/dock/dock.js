@@ -81,10 +81,10 @@ const Pinned = () => Widget.Box({
     vertical: false,
     homogeneous: true,
     children: pins.map((name) => {
-        return Widget.Button({
-            child: new Icon({ icon: getInfo(name)?.icon_name?.toString() || '' }),
-            onClicked: async self => {
-                getInfo(name)?.launch()
+        return new Icon({ 
+            icon: getInfo(name)?.icon_name?.toString() || '',
+            actions: {
+                call: () => getInfo(name)?.launch()
             }
         })
     })
