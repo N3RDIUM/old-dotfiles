@@ -4,26 +4,87 @@
     "source": "~/eos-logo.jpg"
   },
   "general": {
-    "playerName": "spotify",
+    "playerName": "spotify"
   },
   "modules": [
-    "title",
-    "separator",
-    "os",
-    "host",
-    "kernel",
-    "uptime",
-    "packages",
-    "shell",
-    "display",
-    "de",
-    "terminal",
+    {
+        "type": "custom",
+        "format": "\u001b[90m┌─────────────────────────────────────────────────────────────┐"
+    },
+    {
+        "type": "title",
+        "keyWidth": 10
+    },
+    {
+        "type": "custom",
+        "format": "\u001b[90m└─────────────────────────────────────────────────────────────┘"
+    },
+
+    {
+        "type": "custom",
+        "format": "\u001b[90m┌─────────────────────────────────────────────────────────────┐"
+    },
     "cpu",
     "gpu",
     "memory",
-    "localip",
+    "display",
+    "host",
+    {
+        "key": "| Chassis",
+        "type": "chassis"
+    },
+    {
+        "type": "custom",
+        "format": "\u001b[90m└─────────────────────────────────────────────────────────────┘"
+    },
+
+    {
+        "type": "custom",
+        "format": "\u001b[90m┌─────────────────────────────────────────────────────────────┐"
+    },
+    {
+        "key": "| Distro",
+        "type": "os"
+    },
+    {
+        "key": "| Kernel",
+        "type": "kernel"
+    },
+    {
+        "key": "| Uptime",
+        "type": "uptime"
+    },
+    {
+        "key": "| Packages",
+        "type": "packages"
+    },
+    {
+        "key": "| Local IP",
+        "type": "localip"
+    },
+    {
+        "type": "custom",
+        "format": "\u001b[90m└─────────────────────────────────────────────────────────────┘"
+    },
+
+    {
+        "type": "custom",
+        "format": "\u001b[90m┌─────────────────────────────────────────────────────────────┐"
+    },
+    "shell",
+    "de",
+    "terminal",
+    "player",
+    {
+        "type": "custom",
+        "format": "\u001b[90m└─────────────────────────────────────────────────────────────┘"
+    },
+
     "break",
     "break",
     "colors"
-  ]
+  ],
+  "display": {
+      "separator": " "
+  }
 }
