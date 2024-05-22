@@ -48,6 +48,7 @@ aylurs-gtk-shell
 sddm
 swww
 ttf-fira-code (Recommended font)
+zoxide
 zsh
 hyprshot
 gvfs

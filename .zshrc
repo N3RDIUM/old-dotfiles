@@ -30,4 +30,4 @@ zstyle ':prompt:pure:prompt:success' color green
 zstyle ':prompt:pure:prompt:error' color red
 
 # Startup stuff
-fastfetch
+eval "$(zoxide init zsh)"
