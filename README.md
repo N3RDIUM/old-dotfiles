@@ -21,8 +21,16 @@ There's a bunch of treasures hidden for ricers in the depths of this repo. Here'
 - [My Wallpaper](wallpaper.png): My wallpaper! When I change my wallpaper, this will be turned into a directory of its own!
 - [Previous versions](Screenshots/): Screenshots of previous versions of this rice!
 
-# Features (WIP)
+# What's In The Box?
+- AGS config
+- Fastfetch config
+- Hyprland config
+- Kitty config
+- Oh My Zsh config
+- Miscellaneous config for convenience
+- Other scripts I use
 
+# Features (WIP)
 - [ ] Top bar:
     - Left: Workspaces
     - Center: Active window info
