@@ -44,6 +44,8 @@ There's a bunch of treasures hidden for ricers in the depths of this repo. Here'
     - Tabs eg. AI chat, Todo List, Calendar, etc.
 - [ ] Right pane:
     - Similar to left pane but other stuff
+- [ ] Notificaitons
+- [ ] App launcher
 - [ ] Dock:
     - "Go to dashboard" button
     - "Open menu" button
