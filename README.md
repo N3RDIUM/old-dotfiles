@@ -15,21 +15,42 @@ They're managed with GNU's `stow` utility.
 ![screenshot1](./Screenshots/Third.png)
 <p align=center>Please note that this config is not fully completed and that I didn't have time for a proper screenshot.</p>
 
-# Features
-This rice is going to undergo a huge remake soon, now that I've got the hang of this. These are the planned features:
+# Free stuff!
+There's a bunch of treasures hidden for ricers in the depths of this repo. Here's a list of them:
+- [Reusable AGS Components](.config/ags/reusable): A whole bunch of richly commented and documented AGS components for YOUR next rice!
+- [My Wallpaper](wallpaper.png): My wallpaper! When I change my wallpaper, this will be turned into a directory of its own!
+- [Previous versions](Screenshots/): Screenshots of previous versions of this rice!
 
-- [ ] Top left: workspaces, open apps (->)
-- [ ] Top center: (focused) window icon, title bar
-- [ ] Top right: systray, sysmonitor, date/time, astro/weather, quick actions
-- [ ] Right pane (slide-in): tabs thingy w/ copilot, detailed system monitor, quick tiling arrangement assistant etc.
-- [ ] Bottom pane (slide-in): tabs thingy w/ music ctrl + visualiser, astro/weather, date/time + calendar, reminders/alarms, etc.
-- [ ] Center: Feature-rich app launcher!
-- [ ] Background: wallpaper changes per workspace + date/time + some other sysinfo
-- [ ] Last workspace: Dashboard!
-- [ ] Easy appearance configuration applet
-- [ ] Find a *good* music player (kinda a personal thing)
-- [ ] Switch to neovim (also a personal thing)
-- [ ] More coming!
+# Features (WIP)
+
+- [ ] Top bar:
+    - Left: Workspaces
+    - Center: Active window info
+    - Right: Power profiles, System Tray, Quick settings
+- [ ] Bottom bar:
+    - Left: System monitor
+    - Center: Mini-dock (display-only dock with tiny icons)
+    - Right: Clock, Weather, etc.
+- [ ] Left pane:
+    - Bottom has tabs for stuff
+    - Tabs eg. AI chat, Todo List, Calendar, etc.
+- [ ] Right pane:
+    - Similar to left pane but other stuff
+- [ ] Dock:
+    - "Go to dashboard" button
+    - "Open menu" button
+    - Pinned Launchers
+    - Applications in current workspace
+- [ ] Dashboard:
+    - All other AGS windows are hidden
+    - Fluent dashboard with basically everything
+    - Everything = in the form of tiles (create reusable!)
+- [ ] Menu:
+    - iOS-like "tiles" with quick info about stuff
+    - More pinned applications
+    - Quick settings here! (look at the top bar)
+- [ ] Full settings window:
+    - You know what I'm talking about
 
 # Known issues
 - [ ] This is made specifically for a 1920x1080 monitor, manual modifications are required for other monitor sizes
