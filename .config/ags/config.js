@@ -1,4 +1,5 @@
 import TopBar from "./topbar.js";
+import BottomBar from "./bottombar.js";
 
 App.config({
     style: './style.css',
@@ -7,5 +8,6 @@ App.config({
 export default {
     windows: [
         TopBar(),
+        BottomBar()
     ],
 };
