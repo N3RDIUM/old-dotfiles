@@ -1,6 +1,7 @@
 import WindowTitle from "../reusable/hyprland-window-title.js";
 import Workspaces from "../reusable/hyprland-workspaces.js";
 import SystemTray from "../reusable/system-tray.js";
+import ActiveIcon from "../reusable/hyprland-active-icon.js";
 
 // CSS stuff for the workspaces widget thing
 const ACTIVE_CSS   = "font-size: 20px; color: white; background: transparent; min-width: 32px; min-height: 32px; font-family: FiraCode; padding-right: 3px;";
@@ -76,6 +77,10 @@ const CenterLayout = () => Widget.Box({
     homogeneous: false,
     spacing: 0,
     children: [
+        Widget.Box({
+            css: 'background-color: black; min-width: 10px; min-height: 38px; margin-top: 4px; margin-right: 2px; padding-left: 10px; padding-right: 10px; border-radius: 6px;',
+            child: ActiveIcon('font-family: FiraCode; font-size: 20px;', { 'Code': 'Visual Studio Code' }, 'application-x-executable')
+        }),
         Widget.Box({
             css: 'background-color: black; min-width: 10px; min-height: 38px; margin-top: 4px; margin-right: 4px; padding-left: 12px; padding-right: 12px; border-radius: 6px;',
             child: WindowTitle('font-family: FiraCode; font-size: 12px;', '[ N 0 T H 1 N G ]')
