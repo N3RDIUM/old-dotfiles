@@ -2,6 +2,8 @@ import WindowTitle from "../reusable/hyprland-window-title.js";
 import Workspaces from "../reusable/hyprland-workspaces.js";
 import SystemTray from "../reusable/system-tray.js";
 import ActiveIcon from "../reusable/hyprland-active-icon.js";
+import PowerProfiles from "../reusable/power-profiles.js";
+import QuickActions from "../reusable/quick-actions.js";
 
 // CSS stuff for the workspaces widget thing
 const ACTIVE_CSS   = "font-size: 20px; color: white; background: transparent; min-width: 32px; min-height: 32px; font-family: FiraCode; padding-right: 3px;";
@@ -94,9 +96,25 @@ const RightLayout = () => Widget.Box({
     spacing: 0,
     children: [
         Widget.Box({ hexpand: true }),
+        Widget.Box({
+            css: 'background-color: black; min-width: 10px; min-height: 38px; margin-top: 4px; margin-right: 4px; padding-left: 12px; padding-right: 12px; border-radius: 6px;',
+            child: PowerProfiles(
+                { 'performance': '󰡴', 'balanced': '󰊚', 'power-saver': '󰡳' },
+                'font-family: FiraCode; font-size: 20px; margin-right: 8px;',
+                'font-family: FiraCode; font-size: 12px;'
+            )
+        }),
         SystemTray(
             'background-color: black; min-width: 10px; min-height: 38px; margin-top: 4px; margin-right: 4px; padding-left: 4px; padding-right: 4px; border-radius: 6px;',
             'font-size: 20px; min-width: 32px; min-height: 32px;'
+        ),
+        QuickActions(
+            [
+                { icon: '󰂚', tooltip: 'Notification Centre', action: () => { console.log('TODO: Notification Centre') } },
+                { icon: '', tooltip: 'Quick Settings', action: () => { console.log('TODO: Quick Settings') } }
+            ], 
+            'background-color: black; min-width: 10px; min-height: 38px; margin-top: 4px; margin-right: 4px; padding-left: 10px; padding-right: 4px; border-radius: 6px;',
+            'font-size: 20px; margin-right: 14px;',
         )
     ]
 })

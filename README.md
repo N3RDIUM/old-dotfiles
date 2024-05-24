@@ -31,7 +31,7 @@ There's a bunch of treasures hidden for ricers in the depths of this repo. Here'
 - Other scripts I use
 
 # Features (WIP)
-- [ ] Top bar:
+- [x] Top bar:
     - Left: Workspaces
     - Center: Active window info
     - Right: Power profiles, System Tray, Quick settings
@@ -60,6 +60,8 @@ There's a bunch of treasures hidden for ricers in the depths of this repo. Here'
     - More pinned applications
     - Quick settings here! (look at the top bar)
 - [ ] Full settings window:
+    - You know what I'm talking about
+- [ ] J.A.R.V.I.S
     - You know what I'm talking about
 
 # Known issues
