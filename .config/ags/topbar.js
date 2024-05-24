@@ -1,9 +1,9 @@
-import WindowTitle from "../reusable/hyprland-window-title.js";
-import Workspaces from "../reusable/hyprland-workspaces.js";
-import SystemTray from "../reusable/system-tray.js";
-import ActiveIcon from "../reusable/hyprland-active-icon.js";
-import PowerProfiles from "../reusable/power-profiles.js";
-import QuickActions from "../reusable/quick-actions.js";
+import WindowTitle from "./reusable/hyprland-window-title.js";
+import Workspaces from "./reusable/hyprland-workspaces.js";
+import SystemTray from "./reusable/system-tray.js";
+import ActiveIcon from "./reusable/hyprland-active-icon.js";
+import PowerProfiles from "./reusable/power-profiles.js";
+import QuickActions from "./reusable/quick-actions.js";
 
 // CSS stuff for the workspaces widget thing
 const ACTIVE_CSS   = "font-size: 20px; color: white; background: transparent; min-width: 32px; min-height: 32px; font-family: FiraCode; padding-right: 3px;";
