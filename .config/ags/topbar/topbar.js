@@ -78,7 +78,7 @@ const CenterLayout = () => Widget.Box({
     children: [
         Widget.Box({
             css: 'background-color: black; min-width: 10px; min-height: 38px; margin-top: 4px; margin-right: 4px; padding-left: 12px; padding-right: 12px; border-radius: 6px;',
-            child: WindowTitle('font-family: FiraCode; font-size: 12px;')
+            child: WindowTitle('font-family: FiraCode; font-size: 12px;', '[ N 0 T H 1 N G ]')
         })
     ]
 })
