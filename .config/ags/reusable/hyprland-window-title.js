@@ -7,7 +7,8 @@ function limitString(string, n) {
 }
 
 // Pretty straightforward
-const WindowTitle = (limit = 48) => Widget.Label({
+const WindowTitle = (css, limit = 48) => Widget.Label({
+    css: css,
     class_names: ['label'],
     label: hyprland.bind('active').as(x => limitString(x.client.title, limit))
 })

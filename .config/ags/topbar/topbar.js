@@ -1,4 +1,4 @@
-// import WindowTitle from "../reusable/hyprland-window-title.js";
+import WindowTitle from "../reusable/hyprland-window-title.js";
 import Workspaces from "../reusable/hyprland-workspaces.js";
 import SystemTray from "../reusable/system-tray.js";
 
@@ -76,7 +76,10 @@ const CenterLayout = () => Widget.Box({
     homogeneous: false,
     spacing: 0,
     children: [
-        Widget.Box({ hexpand: true })
+        Widget.Box({
+            css: 'background-color: black; min-width: 10px; min-height: 38px; margin-top: 4px; margin-right: 4px; padding-left: 12px; padding-right: 12px; border-radius: 6px;',
+            child: WindowTitle('font-family: FiraCode; font-size: 12px;')
+        })
     ]
 })
 
