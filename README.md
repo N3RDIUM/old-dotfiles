@@ -63,6 +63,8 @@ There's a bunch of treasures hidden for ricers in the depths of this repo. Here'
     - You know what I'm talking about
 - [ ] J.A.R.V.I.S
     - You know what I'm talking about
+- [ ] Lock screen
+    - You know what I'm talking about
 
 # Known issues
 - [ ] This is made specifically for a 1920x1080 monitor, manual modifications are required for other monitor sizes
