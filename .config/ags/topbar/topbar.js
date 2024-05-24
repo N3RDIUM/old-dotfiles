@@ -90,8 +90,8 @@ const RightLayout = () => Widget.Box({
     children: [
         Widget.Box({ hexpand: true }),
         SystemTray(
-            'background-color: black; min-width: 10px; min-height: 38px; margin-top: 4px; margin-right: 4px; padding-left: 8px; padding-right: 8px; border-radius: 6px;',
-            'font-size: 20px;'
+            'background-color: black; min-width: 10px; min-height: 38px; margin-top: 4px; margin-right: 4px; padding-left: 4px; padding-right: 4px; border-radius: 6px;',
+            'font-size: 20px; min-width: 32px; min-height: 32px;'
         )
     ]
 })
