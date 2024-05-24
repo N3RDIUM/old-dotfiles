@@ -51,6 +51,8 @@ There's a bunch of treasures hidden for ricers in the depths of this repo. Here'
     - "Open menu" button
     - Pinned Launchers
     - Applications in current workspace
+- [ ] Media Widget
+    - You know what I'm talking about
 - [ ] Dashboard:
     - All other AGS windows are hidden
     - Fluent dashboard with basically everything

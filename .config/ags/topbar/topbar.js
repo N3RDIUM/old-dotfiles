@@ -111,7 +111,10 @@ const RightLayout = () => Widget.Box({
         QuickActions(
             [
                 { icon: '󰂚', tooltip: 'Notification Centre', action: () => { console.log('TODO: Notification Centre') } },
-                { icon: '', tooltip: 'Quick Settings', action: () => { console.log('TODO: Quick Settings') } }
+                { icon: '', tooltip: 'Quick Settings', action: () => { console.log('TODO: Quick Settings') } },
+                // { icon: '', tooltip: 'Lock Screen', action: () => { console.log('TODO: Lock Screen') } },
+                // { icon: '', tooltip: 'Reboot', action: () => { Utils.execAsync('shutdown -r') } },
+                // { icon: '', tooltip: 'Power Off', action: () => { Utils.execAsync('shutdown now') } },
             ], 
             'background-color: black; min-width: 10px; min-height: 38px; margin-top: 4px; margin-right: 4px; padding-left: 10px; padding-right: 4px; border-radius: 6px;',
             'font-size: 20px; margin-right: 14px;',
@@ -135,7 +138,6 @@ const TopBar = () => Widget.Window({
     anchor: ["top", "left", "right"],
     exclusivity: "exclusive",
     class_names: ['barwin'],
-    css: "min-height: 128px; min-width: 128px;",
     child: Layout()
 })
 
