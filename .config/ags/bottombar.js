@@ -11,7 +11,7 @@ const CenterLayout = () => Widget.Box({
     homogeneous: false,
     spacing: 0,
     children: [
-        Widget.Label('asdf')
+        Widget.Label('WIP')
     ]
 })
 
@@ -27,6 +27,7 @@ const Layout = () => Widget.CenterBox({
     vertical: false,
     homogeneous: false,
     spacing: 0,
+    css: 'background: rgba(0, 0, 0, 0.1); min-height: 42px; border-radius: 6px; margin: 6px; margin-top: 4px;',
     start_widget: LeftLayout(),
     center_widget: CenterLayout(),
     end_widget: RightLayout()
@@ -37,7 +38,6 @@ const BottomBar = () => Widget.Window({
     anchor: ["bottom", "left", "right"],
     exclusivity: "exclusive",
     class_names: ['barwin'],
-    css: 'min-height: 24px; min-width: 24px; background: black;',
     child: Layout()
 })
 
