@@ -12,7 +12,7 @@ These are my legendary WIP dotfiles (they will prlly be maintained forever!).
 They're managed with GNU's `stow` utility.
 
 # Screenshots
-![Rice Screenshot V4](./Screenshots/Fourth.png)
+![Rice Screenshot V5](./Screenshots/Fifth.png)
 <p align=center>Please note that this config is not fully completed and that I didn't have time for a proper screenshot.</p>
 
 # Free stuff!
