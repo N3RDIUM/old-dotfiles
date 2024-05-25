@@ -34,7 +34,7 @@ There's a bunch of treasures hidden for ricers in the depths of this repo. Here'
 - [x] Top bar:
     - Left: Workspaces
     - Center: Active window info
-    - Right: Power profiles, System Tray, Quick settings
+    - Right: Power profiles, System Tray, Quick settings, playerctl/mpris
 - [ ] Bottom bar:
     - Left: System monitor
     - Center: Mini-dock (display-only dock with tiny icons)
@@ -69,7 +69,7 @@ There's a bunch of treasures hidden for ricers in the depths of this repo. Here'
     - You know what I'm talking about
 
 # Known issues
-- [ ] This is made specifically for a 1920x1080 monitor, manual modifications are required for other monitor sizes
+- [x] This is made specifically for a 1920x1080 monitor, manual modifications are required for other monitor sizes [FIXED!]
 
 # Installation
 
