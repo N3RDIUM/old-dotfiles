@@ -1,5 +1,11 @@
 * { all: unset }
 
 .barwin {
-    background-color: transparent;
+    background: transparent;
+}
+.sep {
+    background: white;
+    margin: 6px;
+    min-width: 2px;
+    border-radius: 1px;
 }

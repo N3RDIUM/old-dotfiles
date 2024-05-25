@@ -111,7 +111,7 @@ const RightLayout = () => Widget.Box({
         QuickActions(
             [
                 { icon: '󰂚', tooltip: 'Notification Centre', action: () => { console.log('TODO: Notification Centre') } },
-                { icon: '', tooltip: 'Quick Settings', action: () => { console.log('TODO: Quick Settings') } }
+                { icon: '', tooltip: 'Quick Settings', action: () => { console.log('TODO: Quick Settings') } }
             ], 
             'background: rgba(0, 0, 0, 0.64); min-width: 10px; min-height: 38px; margin-top: 6px; margin-right: 6px; padding-left: 10px; padding-right: 4px; border-radius: 6px;',
             'font-size: 20px; margin-right: 14px;',

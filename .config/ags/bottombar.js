@@ -1,5 +1,6 @@
 import Clock from "./reusable/digital-clock.js";
 import DateWidget from "./reusable/date.js";
+import QuickActions from "./reusable/quick-actions.js";
 
 // Aligned layouts
 const LeftLayout = () => Widget.Box({
@@ -25,11 +26,22 @@ const RightLayout = () => Widget.Box({
     children: [
         Widget.Box({ hexpand: true }),
         DateWidget(
-            'margin-right: 8px; margin-top: 2px;', 
-            'color: rgba(255, 255, 255, 0.64); font-family: FiraCode; font-size: 16px;',
+            'margin-top: 2px; margin-right: 8px;', 
+            'color: rgba(255, 255, 255, 0.64); font-family: FiraCode; font-size: 14px;',
             'color: white; font-family: FiraCode; font-size: 14px;'
         ),
-        Clock('font-family: FiraCode; font-size: 20px;')
+        Clock('font-family: FiraCode; font-size: 24px;'),
+        Widget.Separator({
+            vertical: true,
+            class_names: ['sep']
+        }),
+        QuickActions(
+            [
+                { icon: '', tooltip: 'Settings', action: () => { console.log('TODO: Settings (w/ passwd auth)') } }
+            ], 
+            'margin-left: 4px;',
+            'font-size: 20px; margin-right: 8px;',
+        )
     ]
 })
 
