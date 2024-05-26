@@ -4,7 +4,13 @@ const disk = Variable(0, {
 
 const DiskSpace = () => Widget.Label({
     label: disk.bind().as(x => "DISK " + x + " GB"),
-    css: 'font-size: 12px;'
+    css: disk.bind().as(x => {
+        let n = Number(x);
+        if (n < 10) return 'font-size: 12px; font-family: FiraCode; color: red;';
+        if (n < 50) return 'font-size: 12px; font-family: FiraCode; color: orange;';
+        if (n < 100) return 'font-size: 12px; font-family: FiraCode; color: yellow;';
+        return 'font-size: 12px; font-family: FiraCode;';
+    })
 })
 
 export default DiskSpace;

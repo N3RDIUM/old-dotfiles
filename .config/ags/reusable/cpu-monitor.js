@@ -19,8 +19,13 @@ const CPUMonitor = () => Widget.CircularProgress({
     startAt: 0.75,
     value: cpu.bind().as(p => p),
     child: Widget.Label({
-        label:'C',
-        css: 'font-size: 16px;'
+        label:'󰻠',
+        css: cpu.bind().as(x => {
+            let n = Number(x)
+            if (n > 0.5) return 'font-size: 18px; font-family: FiraCode; color: yellow;'
+            if (n > 0.8) return 'font-size: 18px; font-family: FiraCode; color: red;'
+            return 'font-size: 18px; font-family: FiraCode;';
+        })
     })
 })
 

@@ -19,8 +19,13 @@ const RAMMonitor = () => Widget.CircularProgress({
     startAt: 0.75,
     value: ram.bind().as(p => p),
     child: Widget.Label({
-        label: 'R',
-        css: 'font-size: 16px;'
+        label: '󰍛',
+        css: ram.bind().as(x => {
+            let n = Number(x)
+            if (n > 0.5) return 'font-size: 18px; font-family: FiraCode; color: yellow;';
+            if (n > 0.8) return 'font-size: 18px; font-family: FiraCode; color: red;';
+            return 'font-size: 18px; font-family: FiraCode;';
+        })
     })
 })
 
