@@ -36,9 +36,9 @@ There's a bunch of treasures hidden for ricers in the depths of this repo. Here'
     - Center: Active window info
     - Right: Power profiles, System Tray, Quick settings, playerctl/mpris
 - [ ] Bottom bar:
-    - Left: System monitor
+    - Left: TBD
     - Center: Mini-dock (display-only dock with tiny icons)
-    - Right: Clock, Weather, etc.
+    - Right: Clock, Weather, Mini System monitor etc.
 - [ ] Left pane:
     - Bottom has tabs for stuff
     - Tabs eg. AI chat, Todo List, Calendar, etc.
