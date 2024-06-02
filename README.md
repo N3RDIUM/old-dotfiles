@@ -9,7 +9,6 @@
 ```
 
 These are my legendary WIP dotfiles (they will prlly be maintained forever!). I use the 'Nord' color palette.
-They're managed with GNU's `stow` utility.
 
 # Screenshots
 ![Rice Screenshot V8](./Screenshots/Eighth.png)
