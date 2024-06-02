@@ -12,7 +12,19 @@ const LeftLayout = () => Widget.Box({
     homogeneous: false,
     spacing: 0,
     children: [
-        
+        CPUMonitor(),
+        Widget.Box({ css: 'min-width: 6px;' }),
+        Widget.Box({
+            css: 'margin-top: 4px;',
+            vertical: true,
+            children: [
+                CoreTemp(),
+                DiskSpace()
+            ]
+        }),
+        Widget.Box({ css: 'min-width: 6px;' }),
+        RAMMonitor(),
+        Widget.Box({ hexpand: true }),
     ]
 })
 
@@ -29,25 +41,12 @@ const RightLayout = () => Widget.Box({
     spacing: 0,
     children: [
         Widget.Box({ hexpand: true }),
-        CPUMonitor(),
-        Widget.Box({ css: 'min-width: 6px;' }),
-        Widget.Box({
-            css: 'margin-top: 4px;',
-            vertical: true,
-            children: [
-                CoreTemp(),
-                DiskSpace()
-            ]
-        }),
-        Widget.Box({ css: 'min-width: 6px;' }),
-        RAMMonitor(),
-        Widget.Box({ css: 'min-width: 6px;' }),
         DateWidget(
             'margin-top: 2px; margin-right: 8px;', 
             'color: rgba(255, 255, 255, 0.8); font-family: FiraCode; font-size: 14px;',
             'color: white; font-family: FiraCode; font-size: 14px;'
         ),
-        Clock('font-family: FiraCode; font-size: 28px;'),
+        Clock('font-family: FiraCode; font-size: 28px; margin-top: 4px;'),
         Widget.Separator({
             vertical: true,
             class_names: ['sep']
@@ -67,7 +66,7 @@ const Layout = () => Widget.CenterBox({
     vertical: false,
     homogeneous: false,
     spacing: 0,
-    css: 'background: rgba(0, 0, 0, 0.1); min-height: 42px; border-radius: 8px; margin: 6px; margin-top: 4px; padding-right: 8px; padding-left: 8px;',
+    css: 'background: #2e3440; min-height: 42px; border-radius: 8px; margin: 6px; margin-top: 4px; padding-right: 8px; padding-left: 8px;',
     start_widget: LeftLayout(),
     center_widget: CenterLayout(),
     end_widget: RightLayout()

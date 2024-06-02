@@ -8,7 +8,7 @@
 ░▒▓███████▓▒░ ░▒▓██████▓▒░  ░▒▓█▓▒░  ░▒▓███████▓▒░  
 ```
 
-These are my legendary WIP dotfiles (they will prlly be maintained forever!).
+These are my legendary WIP dotfiles (they will prlly be maintained forever!). I use the 'Nord' color palette.
 They're managed with GNU's `stow` utility.
 
 # Screenshots
@@ -31,6 +31,9 @@ There's a bunch of treasures hidden for ricers in the depths of this repo. Here'
 - Other scripts I use
 
 # Features (WIP)
+EVERYTHING is a tile. This is a WIP.
+Tiles can have hidden contents which can be revealed by scrolling.
+
 - [x] Top bar:
     - Left: Workspaces
     - Center: Active window info
