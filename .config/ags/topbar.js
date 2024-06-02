@@ -13,7 +13,7 @@ const INACTIVE_CSS = "font-size: 20px; color: gray; background: transparent; min
 const WorkspacesWidget = () => Workspaces({
         active: ACTIVE_CSS,
         inactive: INACTIVE_CSS,
-        box: 'background: #2e3440; min-width: 10px; min-height: 38px; margin-top: 6px; margin-left: 6px; padding-left: 4px; padding-right: 4px; border-radius: 6px;'
+        box: 'background: #2e3440; min-width: 10px; min-height: 38px; margin-top: 6px; margin-left: 6px; padding-left: 4px; padding-right: 4px; border-radius: 8px;'
     },
     [
         {
@@ -80,11 +80,11 @@ const CenterLayout = () => Widget.Box({
     spacing: 0,
     children: [
         Widget.Box({
-            css: 'background: #2e3440; min-width: 10px; min-height: 38px; margin-top: 6px; margin-right: 6px; padding-left: 10px; padding-right: 10px; border-radius: 6px;',
+            css: 'background: #2e3440; min-width: 10px; min-height: 38px; margin-top: 6px; margin-right: 6px; padding-left: 10px; padding-right: 10px; border-radius: 8px;',
             child: ActiveIcon('font-family: FiraCode; font-size: 20px;', { 'Code': 'Visual Studio Code' }, 'application-x-executable')
         }),
         Widget.Box({
-            css: 'background: #2e3440; min-width: 10px; min-height: 38px; margin-top: 6px; padding-left: 12px; padding-right: 12px; border-radius: 6px;',
+            css: 'background: #2e3440; min-width: 10px; min-height: 38px; margin-top: 6px; padding-left: 12px; padding-right: 12px; border-radius: 8px;',
             child: WindowTitle('font-family: FiraCode; font-size: 12px;', '[ N 0 T H 1 N G ]')
         })
     ]
@@ -97,7 +97,7 @@ const RightLayout = () => Widget.Box({
     children: [
         Widget.Box({ hexpand: true }),
         Widget.Box({
-            css: 'background: #2e3440; min-width: 10px; min-height: 38px; margin-top: 6px; margin-right: 6px; padding-left: 12px; padding-right: 12px; border-radius: 6px;',
+            css: 'background: #2e3440; min-width: 10px; min-height: 38px; margin-top: 6px; margin-right: 6px; padding-left: 12px; padding-right: 12px; border-radius: 8px;',
             child: PowerProfiles(
                 { 'performance': '󰡴', 'balanced': '󰊚', 'power-saver': '󰡳' },
                 'font-family: FiraCode; font-size: 20px; margin-right: 8px;',
@@ -105,7 +105,7 @@ const RightLayout = () => Widget.Box({
             )
         }),
         SystemTray(
-            'background: #2e3440; min-width: 10px; min-height: 38px; margin-top: 6px; margin-right: 6px; padding-left: 4px; padding-right: 4px; border-radius: 6px;',
+            'background: #2e3440; min-width: 10px; min-height: 38px; margin-top: 6px; margin-right: 6px; padding-left: 4px; padding-right: 4px; border-radius: 8px;',
             'font-size: 20px; min-width: 32px; min-height: 32px;'
         ),
         QuickActions(
@@ -113,7 +113,7 @@ const RightLayout = () => Widget.Box({
                 { icon: '󰂚', tooltip: 'Notification Centre', action: () => { console.log('TODO: Notification Centre') } },
                 { icon: '', tooltip: 'Quick Settings', action: () => { console.log('TODO: Quick Settings') } }
             ], 
-            'background: #2e3440; min-width: 10px; min-height: 38px; margin-top: 6px; margin-right: 6px; padding-left: 10px; padding-right: 4px; border-radius: 6px;',
+            'background: #2e3440; min-width: 10px; min-height: 38px; margin-top: 6px; margin-right: 6px; padding-left: 10px; padding-right: 4px; border-radius: 8px;',
             'font-size: 20px; margin-right: 14px;',
         )
     ]

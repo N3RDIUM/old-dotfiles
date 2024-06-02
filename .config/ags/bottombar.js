@@ -66,7 +66,7 @@ const Layout = () => Widget.CenterBox({
     vertical: false,
     homogeneous: false,
     spacing: 0,
-    css: 'background: #2e3440; min-height: 42px; border-radius: 8px; margin: 6px; margin-top: 4px; padding-right: 8px; padding-left: 8px;',
+    css: 'background: #3b4252; min-height: 42px; border-radius: 8px; margin: 6px; margin-top: 4px; padding-right: 8px; padding-left: 8px;',
     start_widget: LeftLayout(),
     center_widget: CenterLayout(),
     end_widget: RightLayout()
