@@ -23,6 +23,7 @@ There's a bunch of treasures hidden for ricers in the depths of this repo. Here'
 
 # What's In The Box?
 - AGS config
+- GTK Theming config
 - Fastfetch config
 - Hyprland config
 - Kitty config
@@ -93,6 +94,7 @@ zsh
 hyprshot
 gvfs
 dolphin
+nordic-theme
 wofi (Will be superseded by a native AGS launcher!)
 ```
 
