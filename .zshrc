@@ -29,9 +29,11 @@ fi
 
 # Aliases and functions
 alias rpissh="~/raspi-connect.sh"
+alias cheat=cht.sh
 function hyprlog() {
   cat $XDG_RUNTIME_DIR/hypr/$(ls -t $XDG_RUNTIME_DIR/hypr/ | head -n 1)/hyprland.log
 }
 
 # Startup stuff
 eval "$(zoxide init zsh)"
+eval "$(fzf --zsh)"
