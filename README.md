@@ -95,6 +95,9 @@ gvfs
 dolphin
 nordic-theme
 cht.sh-git
+thefuck
+atuin
+eza
 wofi (Will be superseded by a native AGS launcher!)
 ```
 
