@@ -30,7 +30,7 @@ alias unicode="kitty +kitten unicode_input"
 alias hypergrep="kitten hyperlinked-grep"
 alias broadcast="kitty +kitten broadcast"
 alias panel="kitty +kitten panel"
-alias clip="kitten clipboard222"
+alias clip="kitten clipboard"
 alias l5="eza -1 --icons=always --hyperlink --git -l --no-permissions --no-user --git-repos"
 
 alias matrix="cmatrix -b -C blue"

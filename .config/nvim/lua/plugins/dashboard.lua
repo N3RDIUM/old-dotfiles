@@ -43,19 +43,19 @@ return {
                         icon = "  ",
                         desc = "New file                                ",
                         action = "enew",
-                        key = "<space>fn",
+                        key = "<space>nf",
                     },
                     {
                         icon = "  ",
                         desc = "Find folder                             ",
                         action = "Telescope file_browser",
-                        key = "<space>Ff",
+                        key = "<space>fF",
                     },
                     {
                         icon = "  ",
                         desc = "Navigate to project                     ",
                         action = "Telescope project",
-                        key = "<space>pn",
+                        key = "<space>np",
                     },
                     {
                         icon = "󰚰  ",
