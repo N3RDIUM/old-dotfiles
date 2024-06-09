@@ -35,7 +35,6 @@ alias l5="eza -1 --icons=always --hyperlink --git -l --no-permissions --no-user 
 
 alias matrix="cmatrix -b -C blue"
 alias pipes="pipes.sh -p 42 -f 80 -s 12 -r 0 -R"
-
 alias rpissh="~/raspi-connect.sh"
 alias cheat=cht.sh
 
