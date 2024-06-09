@@ -9,6 +9,16 @@ return {
     },
     event = 'VimEnter',
     config = function()
+        require("neo-tree").setup {
+            filesystem = {
+                filtered_items = {
+                    hide_dotfiles = false,
+                    hide_gitignored = false,
+                    hide_hidden = false, -- only works on Windows for hidden files/directories
+                }
+            }
+        }
+        
         vim.keymap.set('n', '<C-b>', ':Neotree filesystem reveal left <CR>', {})
         vim.keymap.set('n', '<C-n>', ':Neotree toggle <CR>', {})
     end
