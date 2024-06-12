@@ -26,11 +26,12 @@ There's a bunch of treasures hidden for ricers in the depths of this repo. Here'
 - Fastfetch config
 - Hyprland config
 - Kitty config
+- Neovim config
 - Oh My Zsh config
 - Miscellaneous config for convenience
 - Other scripts I use
 
-# Features (WIP)
+# AGS Features (WIP)
 EVERYTHING is a tile. This is a WIP.
 Tiles can have hidden contents which can be revealed by scrolling.
 
@@ -98,6 +99,7 @@ cht.sh-git
 thefuck
 atuin
 eza
+ruff-lsp
 wofi (Will be superseded by a native AGS launcher!)
 ```
 

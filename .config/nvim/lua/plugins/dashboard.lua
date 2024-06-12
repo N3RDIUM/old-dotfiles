@@ -37,7 +37,7 @@ return {
                         icon = "󰈞  ",
                         desc = "Find  File                              ",
                         action = "Telescope find_files",
-                        key = "<space>ff",
+                        key = "<space>tf",
                     },
                     {
                         icon = "  ",
@@ -49,13 +49,13 @@ return {
                         icon = "  ",
                         desc = "Find folder                             ",
                         action = "Telescope file_browser",
-                        key = "<space>fF",
+                        key = "<space>tb",
                     },
                     {
                         icon = "  ",
                         desc = "Navigate to project                     ",
                         action = "Telescope project",
-                        key = "<space>np",
+                        key = "<space>tp",
                     },
                     {
                         icon = "󰚰  ",
@@ -72,6 +72,5 @@ return {
                 }
             }
         }
-        vim.keymap.set('n', '<C-d>', ':Dashboard <CR>', {})
     end,
 }
