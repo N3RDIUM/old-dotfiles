@@ -100,6 +100,8 @@ thefuck
 atuin
 eza
 ruff-lsp
+grim
+slurp
 wofi (Will be superseded by a native AGS launcher!)
 ```
 
