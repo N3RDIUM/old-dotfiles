@@ -39,7 +39,7 @@ alias rpissh="~/raspi-connect.sh"
 alias cheat=cht.sh
 
 function hyprlog() {
-  cat $XDG_RUNTIME_DIR/hypr/$(ls -t $XDG_RUNTIME_DIR/hypr/ | head -n 1)/hyprland.log
+  watch -n 0.1 "grep -v \"arranged\" $XDG_RUNTIME_DIR/hypr/$HYPRLAND_INSTANCE_SIGNATURE/hyprland.log | tail -n 40"
 }
 
 # Startup stuff
