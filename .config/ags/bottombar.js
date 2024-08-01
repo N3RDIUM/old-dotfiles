@@ -43,7 +43,7 @@ const RightLayout = () => Widget.Box({
         Widget.Box({ hexpand: true }),
         DateWidget(
             'margin-top: 2px; margin-right: 8px;', 
-            'color: rgba(255, 255, 255, 0.8); font-family: FiraCode; font-size: 14px;',
+            'color: rgba(255, 255, 255, 0.75); font-family: FiraCode; font-size: 14px;',
             'color: white; font-family: FiraCode; font-size: 14px;'
         ),
         Clock('font-family: FiraCode; font-size: 28px; margin-top: 4px;'),
@@ -66,7 +66,7 @@ const Layout = () => Widget.CenterBox({
     vertical: false,
     homogeneous: false,
     spacing: 0,
-    css: 'background: #3b4252; min-height: 42px; border-radius: 8px; margin: 6px; margin-top: 4px; padding-right: 8px; padding-left: 8px;',
+    css: 'background: rgba(59, 66, 82, 0.8); min-height: 42px; border-radius: 8px; margin: 6px; margin-top: 4px; padding-right: 8px; padding-left: 8px;',
     start_widget: LeftLayout(),
     center_widget: CenterLayout(),
     end_widget: RightLayout()

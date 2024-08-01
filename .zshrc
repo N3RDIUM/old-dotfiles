@@ -47,3 +47,4 @@ eval "$(zoxide init zsh)"
 eval "$(fzf --zsh)"
 eval "$(thefuck --alias asdf)"
 eval "$(atuin init zsh)"
+export PATH=$HOME/.local/bin:$PATH
