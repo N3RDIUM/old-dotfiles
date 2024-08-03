@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+        "target": "ES2022",
+        "module": "ES2022",
+        "lib": [
+            "ES2022"
+        ],
+        "baseUrl": ".",
+        "outDir": "dist",
+        "strict": true,
+        "moduleResolution": "Bundler",
+        "skipLibCheck": true,
+        "checkJs": true,
+        "allowJs": true,
+        "jsx": "react-jsx",
+        "jsxImportSource": "node_modules/astal/src/jsx"
+    },
+    "include": [
+        "node_modules/@girs",
+        "src"
+    ]
+}

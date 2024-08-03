@@ -14,12 +14,6 @@ These are my legendary WIP dotfiles (they will prlly be maintained forever!). I 
 ![Rice Screenshot V9](./Screenshots/Ninth.png)
 <p align=center>Please note that this config is not fully completed and that I didn't have time for a proper screenshot.</p>
 
-# Free stuff!
-There's a bunch of treasures hidden for ricers in the depths of this repo. Here's a list of them:
-- [Reusable AGS Components](.config/ags/reusable): A whole bunch of richly commented and documented AGS components for YOUR next rice!
-- [My Wallpaper](wallpaper.png): My wallpaper! When I change my wallpaper, this will be turned into a directory of its own!
-- [Previous versions](Screenshots/): Screenshots of previous versions of this rice!
-
 # What's In The Box?
 - AGS config
 - GTK Theming config
