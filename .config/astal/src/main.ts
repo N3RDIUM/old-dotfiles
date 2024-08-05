@@ -1,6 +1,7 @@
 #!/usr/bin/gjs -m
 import { App } from "astal"
-import Bar from "./widget/Bar"
+import TopBar from "./widget/TopBar"
+import BottomBar from "./widget/BottomBar"
 
 App.start({
     requestHandler(request, res) {
@@ -18,6 +19,7 @@ App.start({
         print(message(arg))
     },
     main() {
-        Bar({ monitor: 0 })
+        TopBar();
+        BottomBar();
     },
 })
